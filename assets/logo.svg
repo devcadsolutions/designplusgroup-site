@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Left compound gold shape -->
+  <path d="M 146,46 L 246,46 L 246,346 L 46,346 L 46,166 L 146,166 Z" fill="#9ea353" />
+
+  <!-- Right compound gold shape -->
+  <path d="M 266,166 L 466,166 L 466,346 L 366,346 L 366,466 L 266,466 Z" fill="#9ea353" />
+
+  <!-- Top-Right navy square -->
+  <rect x="266" y="46" width="100" height="100" fill="#26324e" />
+
+  <!-- Bottom-Left navy square -->
+  <rect x="146" y="366" width="100" height="100" fill="#26324e" />
+</svg>
