@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAMA + ARCHITECTURAL STUDIO</title>
+  <!-- Google Fonts Import: Montserrat with weights for high-profile architecture styling -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <!-- Link to the custom stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="home-page-template">
+
+  <!-- PAGE ROUTING SYSTEMS (Pure CSS Radio Tab Controllers) -->
+  <input type="radio" name="route-switch" id="route-home" checked class="route-switch-trigger">
+  <input type="radio" name="route-switch" id="route-articles" class="route-switch-trigger">
+  <input type="radio" name="route-switch" id="route-about" class="route-switch-trigger">
+  <input type="radio" name="route-switch" id="route-contact" class="route-switch-trigger">
+
+  <!-- 1. TRANSPARENT HEADER BAR (Fixed at Top, outside viewport container but styling relies on active route state) -->
+  <header class="app-header" id="masthead">
+    <div class="header-inner-container">
+      <div class="site-branding">
+        <!-- Clicking logo brings you back to home route -->
+        <label for="route-home" class="logo-link">
+          <img class="site-logo" src="https://ramadesignstudio.com/wp-content/uploads/2025/07/Logo-Only-2025-01-Bevel-02-62x83.png" alt="RAMA + ARCHITECTURAL STUDIO">
+        </label>
+        <div class="brand-text-wrap">
+          <h1 class="brand-title"><label for="route-home">RAMA + ARCHITECTURAL STUDIO</label></h1>
+          <p class="brand-tagline">DESIGN + BUILD + COLLAB + VIRTUAL PROJECT DEVELOPMENT</p>
+        </div>
+      </div>
+
+      <!-- CSS-Only Hamburger Toggle Hack -->
+      <input type="checkbox" id="menu-toggle-input" class="menu-toggle-checkbox">
+      <label for="menu-toggle-input" class="menu-toggle-label" aria-label="Toggle navigation menu">
+        <span class="hamburger-bar"></span>
+      </label>
+
+      <nav class="navigation-menu-bar">
+        <ul class="nav-links-list">
+          <li><label for="route-home" class="nav-item home-nav">Home</label></li>
+          <li><label for="route-articles" class="nav-item articles-nav">Articles</label></li>
+          <li><label for="route-about" class="nav-item about-nav">About</label></li>
+          <li><label for="route-contact" class="nav-item contact-nav">Contact</label></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 2. ROUTED VIEWPORTS (Content containers toggle based on selected radio filter) -->
+  <main class="page-viewport">
+
+    <!-- ==============================================
+         TAB 1: HOME PAGE VIEW
+         ============================================== -->
+    <div class="page-view" id="home-view-pane">
+      <!-- HERO SLIDESHOW SECTION -->
+      <section class="hero-slideshow-section" id="hero-banner">
+        <div class="slideshow-container">
+          <div class="slide slide-1"></div>
+          <div class="slide slide-2"></div>
+          <div class="slide slide-3"></div>
+          <div class="slide slide-4"></div>
+        </div>
+        <div class="slideshow-overlay"></div>
+        <div class="hero-content">
+          <h5 class="welcome-pre">Welcome to</h5>
+          <h2 class="welcome-main">RAMA + Architectural Studio</h2>
+        </div>
+      </section>
+
+      <!-- WELCOME INFORMATION SECTION -->
+      <section class="welcome-intro-section">
+        <div class="intro-container" id="welcome-intro">
+          <h5 class="glow-tag">Welcome</h5>
+          <div class="intro-text-block">
+            <p class="intro-paragraph-bold">
+              RAMA + ARCHITECTURAL STUDIO IS A PROFESSIONAL DESIGN &amp; BUILD TEAM focusing on client needs from project conception to implementation.
+            </p>
+            <p class="intro-paragraph-standard">
+              With more than 25+ years experience in design, planning and construction, RAMA + ARCHITECTURAL STUDIO has delivered full architectural, engineering and construction services for residential, commercial, institutional, industrial &amp; mixed-use projects.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT WE DO BEST SECTION -->
+      <section class="what-we-do-best-section">
+        <div class="section-container">
+          <div class="section-header">
+            <h1 class="header-heading">What we do best</h1>
+            <h5 class="header-subtitle">Our Service Specialties</h5>
+          </div>
+
+          <div class="specialties-cards-grid">
+            <!-- Card 1 -->
+            <article class="specialty-card">
+              <div class="card-media-wrapper">
+                <img class="card-image" src="https://ramadesignstudio.com/wp-content/uploads/2025/07/Specialties-1.png" alt="A + E DESIGN specialist sketch">
+              </div>
+              <h3 class="card-title">A + E DESIGN</h3>
+              <p class="card-description">
+                <strong>Need A&amp;E Professionals?</strong><br>
+                Get fast &amp; accurate architectural &amp; engineering designs, plans &amp; contract documents for all types &amp; sizes of residential, commercial, institutional &amp; industrial projects.
+              </p>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="specialty-card">
+              <div class="card-media-wrapper">
+                <img class="card-image" src="https://ramadesignstudio.com/wp-content/uploads/2025/07/Specialties-2.png" alt="DESIGN + BUILD blueprints">
+              </div>
+              <h3 class="card-title">DESIGN + BUILD</h3>
+              <p class="card-description">
+                <strong>Ready to build those schemes?</strong><br>
+                RAMA + Design &amp; Build projects are implemented by highly qualified in-house team &amp; reliable and specialized partners at every stage of the project’s development.
+              </p>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="specialty-card">
+              <div class="card-media-wrapper">
+                <img class="card-image" src="https://ramadesignstudio.com/wp-content/uploads/2025/07/Specialties-3.png" alt="Project Collab meeting space">
+              </div>
+              <h3 class="card-title">PROJECT + COLLAB</h3>
+              <p class="card-description">
+                <strong>Need PRO support for your project?</strong><br>
+                We find ways to support your multi-scale projects with our team of architects, engineers, partner contractors, and product specialists to assist <strong>you online</strong> and <strong>onsite</strong>.
+              </p>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="specialty-card">
+              <div class="card-media-wrapper">
+                <img class="card-image" src="https://ramadesignstudio.com/wp-content/uploads/2025/07/Specialties-4.png" alt="3D rendering software screen representation">
+              </div>
+              <h3 class="card-title">VIRTUAL PROJECT DEVELOPMENT</h3>
+              <p class="card-description">
+                <strong>Need 3D virtual presentations?</strong><br>
+                We provide you with <strong>3D virtual design solutions</strong> for your project’s presentation &amp; analysis using the latest 3D virtual simulation programs and animation for that cost effective and critical decisions.
+              </p>
+            </article>
+          </div>
+
+          <!-- Banner quote -->
+          <div class="specialties-inline-banner">
+            <h4 class="banner-quote-text">"We give our clients our best services and focus on what matters most."</h4>
+          </div>
+        </div>
+      </section>
+
+      <!-- OUR END-TO-END SOLUTIONS -->
+      <section class="end-to-end-solutions-section">
+        <div class="section-container">
+          <div class="solutions-header">
+            <h5 class="solutions-subtitle">Our End-to-End Solutions</h5>
+          </div>
+
+          <div class="solutions-cards-grid">
+            <!-- Service 1 -->
+            <div class="solution-card">
+              <div class="solution-media">
+                <img class="solution-img" src="https://ramadesignstudio.com/wp-content/uploads/2025/07/Services-01-Pre-Design-Services.png" alt="Pre-Design Services visual">
+              </div>
+              <h3 class="solution-title">Pre-Design Services</h3>
+              
+              <!-- Pure CSS Accordion Item -->
+              <details class="solution-accordion">
+                <summary class="accordion-trigger">
+                  <span class="click-text">See Full List</span>
+                  <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </summary>
+                <div class="accordion-content">
+                  <ul class="check-list">
+                    <li>Client Consultations</li>
+                    <li>Pre-Feasibility Studies</li>
+                    <li>Feasibility Studies</li>
+                    <li>Site Selection and Analysis</li>
+                    <li>Site Utilization</li>
+                    <li>Land-Use Studies</li>
+                    <li>Architectural Research</li>
+                    <li>Architectural Programming</li>
+                    <li>Space Planning</li>
+                    <li>Space Management Studies</li>
+                    <li>Value Management</li>
+                    <li>Design Brief Preparation</li>
+                    <li>Promotional Services</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="solution-card">
+              <div class="solution-media">
+                <img class="solution-img" src="https://ramadesignstudio.com/wp-content/uploads/2025/07/Services-02-Design-Services.png" alt="Design Services visual">
+              </div>
+              <h3 class="solution-title">Design Services</h3>
+              
+              <!-- Pure CSS Accordion Item -->
+              <details class="solution-accordion">
+                <summary class="accordion-trigger">
+                  <span class="click-text">See Full List</span>
+                  <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </summary>
+                <div class="accordion-content">
+                  <ul class="nested-services-list">
+                    <li>
+                      <strong>Project Definition</strong>
+                      <p>Concept Framework &amp; Project Requirements, Scope of Services, Architectural Programming, Initial Cost Estimate Report</p>
+                    </li>
+                    <li>
+                      <strong>Schematic Design</strong>
+                      <p>Program, Budget, Site &amp; Scheduling Report, Schematic Design Development Report</p>
+                    </li>
+                    <li>
+                      <strong>Design Development</strong>
+                      <p>Architectural Design Drawings, Outline Material and Equipment Specifications, Diagrammatic Layout of Systems, Probable Construction Costs Statement</p>
+                    </li>
+                    <li>
+                      <strong>Contract Documents</strong>
+                      <p>Complete A+E Construction Drawings, Technical Specifications (Materials / Finishes), Construction General Conditions, 7 Sets of Plans, Updated Billing of Materials Estimates, Building Permit Application Assistance</p>
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="solution-card">
+              <div class="solution-media">
+                <img class="solution-img" src="https://ramadesignstudio.com/wp-content/uploads/2025/07/Services-03-Build-Services.png" alt="Build Services visual">
+              </div>
+              <h3 class="solution-title">Build Services</h3>
+              
+              <!-- Pure CSS Accordion Item -->
+              <details class="solution-accordion">
+                <summary class="accordion-trigger">
+                  <span class="click-text">See Full List</span>
+                  <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </summary>
+                <div class="accordion-content">
+                  <ul class="check-list">
+                    <li>Bidding &amp; Negotiation Management</li>
+                    <li>Project Preparation &amp; Kick-off</li>
+                    <li>Contract Documents Management</li>
+                    <li>Project Architects &amp; Engineers</li>
+                    <li>Full Time Project Administration</li>
+                    <li>Billing and Payment Management</li>
+                    <li>Quality Control Management</li>
+                    <li>Site Safety Protocols / COSH</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="solution-card">
+              <div class="solution-media">
+                <img class="solution-img" src="https://ramadesignstudio.com/wp-content/uploads/2025/07/Services-04-3D-Project-Development.png" alt="Virtual Project Development visual">
+              </div>
+              <h3 class="solution-title">Virtual Project Development</h3>
+              
+              <!-- Pure CSS Accordion Item -->
+              <details class="solution-accordion">
+                <summary class="accordion-trigger">
+                  <span class="click-text">See Full List</span>
+                  <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </summary>
+                <div class="accordion-content">
+                  <ul class="check-list">
+                    <li>2D to 3D Design Perspective</li>
+                    <li>3D Materials Specification</li>
+                    <li>3D Lighting Simulations</li>
+                    <li>3D Walkthroughs</li>
+                    <li>3D Viz Animations</li>
+                    <li>3D Project Site Simulations</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <!-- Banner quote -->
+          <div class="solutions-inline-banner">
+            <h4 class="banner-quote-text">"We offer a complete line of services, from idea conception to turn-over."</h4>
+          </div>
+        </div>
+      </section>
+
+      <!-- FRONT PAGE HIGHLIGHTED ARTICLES -->
+      <section class="featured-articles-section">
+        <div class="section-container">
+          <div class="articles-header">
+            <h2 class="articles-title">Featured Articles:</h2>
+          </div>
+
+          <div class="articles-cards-grid">
+            <!-- Article 1 -->
+            <article class="article-grid-card">
+              <div class="article-thumbnail-wrapper">
+                <img class="article-img" src="https://ramadesignstudio.com/wp-content/uploads/2025/06/2025-06-11-What-to-ask-the-architect-during-the-first-meeting.-Time-Saving-Guide-2-200x300.png" alt="What to ask the architect article cover">
+                <div class="article-hover-overlay">
+                  <svg class="arrow-overlay-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="article-content-wrapper">
+                <h4 class="article-title-heading"><label for="route-articles">What to ask the architect during the first meeting. A Time-saving Guide.</label></h4>
+                <div class="article-meta">
+                  <span class="author">by raymundo.mateo</span>
+                  <span class="meta-dot">&bull;</span>
+                  <span class="date">June 11, 2025</span>
+                </div>
+                <p class="article-excerpt">
+                  What to Ask the Architect During the First Formal Meeting:...
+                </p>
+                <label for="route-articles" class="read-more-btn">Read More</label>
+              </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="article-grid-card">
+              <div class="article-thumbnail-wrapper">
+                <img class="article-img" src="https://ramadesignstudio.com/wp-content/uploads/2021/09/2025-06-11-When-Relationships-Matter-Client-Architect-Partnership-or-Short-Term-Affair-200x300.png" alt="When relationships matter article cover">
+                <div class="article-hover-overlay">
+                  <svg class="arrow-overlay-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="article-content-wrapper">
+                <h4 class="article-title-heading"><label for="route-articles">When Relationships Matter: Client–Architect Partnership or Short-Term Affair?</label></h4>
+                <div class="article-meta">
+                  <span class="author">by raymundo.mateo</span>
+                  <span class="meta-dot">&bull;</span>
+                  <span class="date">June 11, 2025</span>
+                </div>
+                <p class="article-excerpt">
+                  In the world of architecture, every project starts with a...
+                </p>
+                <label for="route-articles" class="read-more-btn">Read More</label>
+              </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="article-grid-card">
+              <div class="article-thumbnail-wrapper">
+                <img class="article-img" src="https://ramadesignstudio.com/wp-content/uploads/2025/06/When-things-arent-clear-read-the-Plans-5-200x300.png" alt="Read the plans article cover">
+                <div class="article-hover-overlay">
+                  <svg class="arrow-overlay-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="article-content-wrapper">
+                <h4 class="article-title-heading"><label for="route-articles">When Things Aren’t Clear, Read the Plans</label></h4>
+                <div class="article-meta">
+                  <span class="author">by raymundo.mateo</span>
+                  <span class="meta-dot">&bull;</span>
+                  <span class="date">June 11, 2025</span>
+                </div>
+                <p class="article-excerpt">
+                  Construction’s Golden Rule: Trust the Plans In the world of...
+                </p>
+                <label for="route-articles" class="read-more-btn">Read More</label>
+              </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="article-grid-card">
+              <div class="article-thumbnail-wrapper">
+                <img class="article-img" src="https://ramadesignstudio.com/wp-content/uploads/2025/06/2025-06-06-Client-Architect-Matchmaking-200x300.png" alt="Matchmaking article cover">
+                <div class="article-hover-overlay">
+                  <svg class="arrow-overlay-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="article-content-wrapper">
+                <h4 class="article-title-heading"><label for="route-articles">Different folks, Different Strokes. Client-Architect Match making.</label></h4>
+                <div class="article-meta">
+                  <span class="author">by raymundo.mateo</span>
+                  <span class="meta-dot">&bull;</span>
+                  <span class="date">June 6, 2025</span>
+                </div>
+                <p class="article-excerpt">
+                  Different Folks, Different Strokes: Client–Architect Matchmaking In architecture, as in...
+                </p>
+                <label for="route-articles" class="read-more-btn">Read More</label>
+              </div>
+            </article>
+          </div>
+
+          <div class="load-more-btn-container">
+            <label for="route-articles" class="load-more-grid-btn">View All Articles</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECT CONSULTATION PROMO PANEL -->
+      <section class="consultation-promo-section">
+        <div class="promo-container">
+          <h2 class="promo-title">Tell us about your project!</h2>
+          <p class="promo-description">
+            Don’t hesitate to contact us. We’ll be happy to discuss with you in detail, answer your queries and provide solutions.
+          </p>
+          <div class="promo-button-wrap">
+            <label for="route-contact" class="message-action-btn">SEND US A MESSAGE</label>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==============================================
+         TAB 2: ARTICLES ARCHIVE VIEW
+         ============================================== -->
+    <div class="page-view" id="articles-view-pane">
+      <!-- MAIN PAGE HEADER BANNER -->
+      <section class="banner-header-section" style="background-image: url('https://ramadesignstudio.com/wp-content/uploads/2021/08/construction-drawing-engineering-2682641.jpg');">
+        <div class="banner-header-overlay"></div>
+        <div class="banner-header-content">
+          <h1 class="banner-header-title">Articles</h1>
+        </div>
+      </section>
+
+      <!-- TWO COLUMN LAYOUT: MAIN CONTENT + SIDEBAR -->
+      <section class="archive-container-section">
+        <div class="archive-inner-wrap">
+          
+          <!-- LEFT SIDE: LATEST ARTICLES LIST -->
+          <div class="archive-main-column">
+            
+            <!-- Trending Slider / Content Ticker -->
+            <div class="trending-ticker-container">
+              <div class="ticker-badge">Trending Today</div>
+              <div class="ticker-scroller-wrap">
+                <ul class="ticker-items-scroller">
+                  <li><span class="bullet-ticker">&bull;</span>What to ask the architect during the first meeting. A Time-saving Guide.</li>
+                  <li><span class="bullet-ticker">&bull;</span>When Relationships Matter: Client–Architect Partnership or Short-Term Affair?</li>
+                  <li><span class="bullet-ticker">&bull;</span>When Things Aren’t Clear, Read the Plans</li>
+                  <li><span class="bullet-ticker">&bull;</span>Different folks, Different Strokes. Client-Architect Match making.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Grid of 8 Detailed Posts -->
+            <div class="posts-archive-grid">
+              
+              <!-- Post 1 -->
+              <article class="article-archive-card">
+                <div class="archive-thumbnail-box">
+                  <img class="archive-card-img" src="https://ramadesignstudio.com/wp-content/uploads/2025/06/2025-06-11-What-to-ask-the-architect-during-the-first-meeting.-Time-Saving-Guide-2-200x300.png" alt="Article Cover">
+                  <span class="archive-card-category">Uncategorized</span>
+                </div>
+                <div class="archive-content-box">
+                  <h3 class="archive-card-heading">What to ask the architect during the first meeting. A Time-saving Guide.</h3>
+                  <div class="archive-card-meta">
+                    <span>June 11, 2025</span>
+                    <span class="meta-separator">&bull;</span>
+                    <span>by raymundo.mateo</span>
+                  </div>
+                  <p class="archive-card-excerpt">
+                    What to Ask the Architect During the First Formal Meeting: Essential inquiries regarding building program, budget constraints, zoning checks, layout frameworks, and project schedules to save hundreds of construction hours.
+                  </p>
+                  <a href="#welcome-intro" class="archive-card-readmore">Read More</a>
+                </div>
+              </article>
+
+              <!-- Post 2 -->
+              <article class="article-archive-card">
+                <div class="archive-thumbnail-box">
+                  <img class="archive-card-img" src="https://ramadesignstudio.com/wp-content/uploads/2021/09/2025-06-11-When-Relationships-Matter-Client-Architect-Partnership-or-Short-Term-Affair-200x300.png" alt="Article Cover">
+                  <span class="archive-card-category">Uncategorized</span>
+                </div>
+                <div class="archive-content-box">
+                  <h3 class="archive-card-heading">When Relationships Matter: Client–Architect Partnership or Short-Term Affair?</h3>
+                  <div class="archive-card-meta">
+                    <span>June 11, 2025</span>
+                    <span class="meta-separator">&bull;</span>
+                    <span>by raymundo.mateo</span>
+                  </div>
+                  <p class="archive-card-excerpt">
+                    In the world of custom-crafted architecture, every high-fidelity project begins with client trust. Dissecting the massive differences between collaborative partnerships and short-term utility transactions.
+                  </p>
+                  <a href="#welcome-intro" class="archive-card-readmore">Read More</a>
+                </div>
+              </article>
+
+              <!-- Post 3 -->
+              <article class="article-archive-card">
+                <div class="archive-thumbnail-box">
+                  <img class="archive-card-img" src="https://ramadesignstudio.com/wp-content/uploads/2025/06/When-things-arent-clear-read-the-Plans-5-200x300.png" alt="Article Cover">
+                  <span class="archive-card-category">Uncategorized</span>
+                </div>
+                <div class="archive-content-box">
+                  <h3 class="archive-card-heading">When Things Aren’t Clear, Read the Plans</h3>
+                  <div class="archive-card-meta">
+                    <span>June 11, 2025</span>
+                    <span class="meta-separator">&bull;</span>
+                    <span>by raymundo.mateo</span>
+                  </div>
+                  <p class="archive-card-excerpt">
+                    Construction's Supreme Golden Rule: High quality plans are the final source of architectural truth during layout clashes. Learn how accurate structural planning prevents on-site implementation errors.
+                  </p>
+                  <a href="#welcome-intro" class="archive-card-readmore">Read More</a>
+                </div>
+              </article>
+
+              <!-- Post 4 -->
+              <article class="article-archive-card">
+                <div class="archive-thumbnail-box">
+                  <img class="archive-card-img" src="https://ramadesignstudio.com/wp-content/uploads/2025/06/2025-06-06-Client-Architect-Matchmaking-200x300.png" alt="Article Cover">
+                  <span class="archive-card-category">Uncategorized</span>
+                </div>
+                <div class="archive-content-box">
+                  <h3 class="archive-card-heading">Different folks, Different Strokes. Client-Architect Match making.</h3>
+                  <div class="archive-card-meta">
+                    <span>June 6, 2025</span>
+                    <span class="meta-separator">&bull;</span>
+                    <span>by raymundo.mateo</span>
+                  </div>
+                  <p class="archive-card-excerpt">
+                    Different Folks, Different Strokes: Matching client style profile with designer specialisations is the key differentiator between successful visual execution and creative stalemate.
+                  </p>
+                  <a href="#welcome-intro" class="archive-card-readmore">Read More</a>
+                </div>
+              </article>
+
+              <!-- Post 5 -->
+              <article class="article-archive-card">
+                <div class="archive-thumbnail-box">
+                  <img class="archive-card-img" src="https://ramadesignstudio.com/wp-content/uploads/2021/09/The-Architects-Studio-A-Design-Firm-or-a-Business-Filipino-200x300.webp" alt="Article Cover">
+                  <span class="archive-card-category">Uncategorized</span>
+                </div>
+                <div class="archive-content-box">
+                  <h3 class="archive-card-heading">The Architect's Studio, A design firm or a business.</h3>
+                  <div class="archive-card-meta">
+                    <span>June 6, 2025</span>
+                    <span class="meta-separator">&bull;</span>
+                    <span>by raymundo.mateo</span>
+                  </div>
+                  <p class="archive-card-excerpt">
+                    An in-depth analysis on balancing raw spatial creativity and design idealism with concrete fiscal timelines, client deliverables, operational efficiency, and commercial project management.
+                  </p>
+                  <a href="#welcome-intro" class="archive-card-readmore">Read More</a>
+                </div>
+              </article>
+
+              <!-- Post 6 -->
+              <article class="article-archive-card">
+                <div class="archive-thumbnail-box">
+                  <img class="archive-card-img" src="https://ramadesignstudio.com/wp-content/uploads/2021/09/The-Architects-Services.-Going-through-the-extra-mile-for-free-200x300.webp" alt="Article Cover">
+                  <span class="archive-card-category">Uncategorized</span>
+                </div>
+                <div class="archive-content-box">
+                  <h3 class="archive-card-heading">The Architect's Services. Going through the extra mile, for free?</h3>
+                  <div class="archive-card-meta">
+                    <span>June 6, 2025</span>
+                    <span class="meta-separator">&bull;</span>
+                    <span>by raymundo.mateo</span>
+                  </div>
+                  <p class="archive-card-excerpt">
+                    In the competitive realm of developmental services, going the extra mile provides long-term authority. Dissecting the thin barrier between added client support, free advisory, and commercial value.
+                  </p>
+                  <a href="#welcome-intro" class="archive-card-readmore">Read More</a>
+                </div>
+              </article>
+
+              <!-- Post 7 -->
+              <article class="article-archive-card">
+                <div class="archive-thumbnail-box">
+                  <img class="archive-card-img" src="https://ramadesignstudio.com/wp-content/uploads/2021/08/settlement-villa-rendering-1026491.jpg" alt="Article Cover">
+                  <span class="archive-card-category">Uncategorized</span>
+                </div>
+                <div class="archive-content-box">
+                  <h3 class="archive-card-heading">Why the client's clear goal is important.</h3>
+                  <div class="archive-card-meta">
+                    <span>September 7, 2021</span>
+                    <span class="meta-separator">&bull;</span>
+                    <span>by raymundo.mateo</span>
+                  </div>
+                  <p class="archive-card-excerpt">
+                    A client's well-defined programmatic target serves as the ultimate benchmark. Resolving aesthetic ambiguity early preserves budgets, speeds up permit processes, and avoids on-site revisions.
+                  </p>
+                  <a href="#welcome-intro" class="archive-card-readmore">Read More</a>
+                </div>
+              </article>
+
+              <!-- Post 8 -->
+              <article class="article-archive-card">
+                <div class="archive-thumbnail-box">
+                  <img class="archive-card-img" src="https://ramadesignstudio.com/wp-content/uploads/2021/08/works-plan-construction-site-3480187.jpg" alt="Article Cover">
+                  <span class="archive-card-category">Uncategorized</span>
+                </div>
+                <div class="archive-content-box">
+                  <h3 class="archive-card-heading">What the architect learned from school and why apprenticeship is necessary.</h3>
+                  <div class="archive-card-meta">
+                    <span>September 7, 2021</span>
+                    <span class="meta-separator">&bull;</span>
+                    <span>by raymundo.mateo</span>
+                  </div>
+                  <p class="archive-card-excerpt">
+                    Classical architecture studies establish visual grids, but direct on-site apprenticeship completes professional field development. Exploring practical design mechanics.
+                  </p>
+                  <a href="#welcome-intro" class="archive-card-readmore">Read More</a>
+                </div>
+              </article>
+
+            </div>
+
+            <!-- Pagination Grid Button -->
+            <div class="load-more-btn-container">
+              <button class="load-more-grid-btn">Load More</button>
+            </div>
+
+          </div>
+
+          <!-- RIGHT SIDE: RICH SIDEBAR PANELS -->
+          <aside class="archive-sidebar-column">
+            
+            <!-- Widget 1: Pure CSS Interactive Search -->
+            <div class="sidebar-widget">
+              <div class="search-form-wrapper">
+                <input type="search" placeholder="Search articles..." class="sidebar-search-input">
+                <button type="button" class="sidebar-search-btn">Search</button>
+              </div>
+            </div>
+
+            <!-- Widget 2: Archives Accordion -->
+            <div class="sidebar-widget">
+              <h4 class="widget-title">Archives</h4>
+              <ul class="widget-list">
+                <li><a href="#welcome-intro">June 2025 <span class="widget-count">(6)</span></a></li>
+                <li><a href="#welcome-intro">September 2021 <span class="widget-count">(29)</span></a></li>
+              </ul>
+            </div>
+
+            <!-- Widget 3: Recent Articles Content -->
+            <div class="sidebar-widget">
+              <h4 class="widget-title">Recent Articles</h4>
+              <ul class="recent-articles-sidebar-list">
+                <li>
+                  <a href="#welcome-intro" class="recent-item-link">What to ask the architect during the first meeting. A Time-saving Guide.</a>
+                  <span class="recent-item-date">June 11, 2025</span>
+                </li>
+                <li>
+                  <a href="#welcome-intro" class="recent-item-link">When Relationships Matter: Client–Architect Partnership or Short-Term Affair?</a>
+                  <span class="recent-item-date">June 11, 2025</span>
+                </li>
+                <li>
+                  <a href="#welcome-intro" class="recent-item-link">When Things Aren’t Clear, Read the Plans</a>
+                  <span class="recent-item-date">June 11, 2025</span>
+                </li>
+                <li>
+                  <a href="#welcome-intro" class="recent-item-link">Different folks, Different Strokes. Client-Architect Match making.</a>
+                  <span class="recent-item-date">June 6, 2025</span>
+                </li>
+                <li>
+                  <a href="#welcome-intro" class="recent-item-link">The Architect’s Services. Going through the extra mile, for free?</a>
+                  <span class="recent-item-date">June 6, 2025</span>
+                </li>
+              </ul>
+            </div>
+
+          </aside>
+
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==============================================
+         TAB 3: ABOUT US VIEW (Design Principles + Hover Image Accordion)
+         ============================================== -->
+    <div class="page-view" id="about-view-pane">
+      <!-- MAIN PAGE HEADER BANNER -->
+      <section class="banner-header-section" style="background-image: url('https://ramadesignstudio.com/wp-content/uploads/2021/08/tree-butterfly-globe-5725540.jpg');">
+        <div class="banner-header-overlay"></div>
+        <div class="banner-header-content">
+          <h1 class="banner-header-title">About Us.</h1>
+        </div>
+      </section>
+
+      <!-- OUR DESIGN PRINCIPLES STATEMENT Block -->
+      <section class="about-statement-section">
+        <div class="about-statement-container">
+          <h4 class="statement-subtitle">OUR DESIGN PRINCIPLES</h4>
+          <h2 class="statement-headline">
+            At RAMA ARCHITECTURE STUDIO we focus on client's essential and functional requirements without sacrificing on aesthetics, quality, safety and project impact on its environment.
+          </h2>
+          <hr class="statement-divider">
+          <p class="statement-subtext">
+            We also advocate on "forward design principles" to help our clients maximize the project's potential for future growth and expansions.
+          </p>
+        </div>
+      </section>
+
+      <!-- HORIZONTAL HOVER IMAGE ACCORDION BLOCK (Pristine elementor replication) -->
+      <section class="hover-accordion-section">
+        <div class="hover-accordion-wrapper">
+          
+          <!-- Accordion Panel 1: Functionality -->
+          <div class="accordion-panel panel-1" style="background-image: url('https://ramadesignstudio.com/wp-content/uploads/2021/08/mark-marker-hand-516278.jpg');" tabindex="0">
+            <div class="panel-overlay"></div>
+            <div class="panel-content">
+              <h3 class="panel-title">FUNCTIONALITY</h3>
+              <p class="panel-desc">We design with spatial function as first priority thus enabling spaces to be utilized well. We also introduce solutions to make spaces future ready, expandable for mixed use and adaptable to multiple functions beyond its purpose.</p>
+            </div>
+          </div>
+
+          <!-- Accordion Panel 2: Sustainability -->
+          <div class="accordion-panel panel-2" style="background-image: url('https://ramadesignstudio.com/wp-content/uploads/2021/08/tree-butterfly-globe-5725540.jpg');" tabindex="0">
+            <div class="panel-overlay"></div>
+            <div class="panel-content">
+              <h3 class="panel-title">SUSTAINABILITY</h3>
+              <p class="panel-desc">We continue to search and apply sustainable materials and techniques for all our projects to support local products and building materials while reducing the project's environmental impact.</p>
+            </div>
+          </div>
+
+          <!-- Accordion Panel 3: Resilience -->
+          <div class="accordion-panel panel-3" style="background-image: url('https://ramadesignstudio.com/wp-content/uploads/2021/08/construction-drawing-engineering-2682641.jpg');" tabindex="0">
+            <div class="panel-overlay"></div>
+            <div class="panel-content">
+              <h3 class="panel-title">RESILIENCE</h3>
+              <p class="panel-desc">We maximize site orientation to match appropriate spaces and use necessary materials and solutions to take advantage of the site's characteristics.</p>
+            </div>
+          </div>
+
+          <!-- Accordion Panel 4: Organic -->
+          <div class="accordion-panel panel-4" style="background-image: url('https://ramadesignstudio.com/wp-content/uploads/2021/08/garage-floors-balconies-plants-1149542.jpg');" tabindex="0">
+            <div class="panel-overlay"></div>
+            <div class="panel-content">
+              <h3 class="panel-title">ORGANIC</h3>
+              <p class="panel-desc">We utilize the site's character and topography as a design feature thus blending with nature and environment while reducing materials & resources requirements for the projects.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- LINK TO ARTICLES CALLOUT SECTION -->
+      <section class="cta-banner-section">
+        <div class="cta-inner-block">
+          <h3 class="cta-title">Visit our Articles Section &gt;</h3>
+          <div class="cta-button-wrap">
+            <label for="route-articles" class="cta-action-button">Articles Page</label>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==============================================
+         TAB 4: CONTACT VIEW (Contact Info Grid + Send Message WPFORMS replica)
+         ============================================== -->
+    <div class="page-view" id="contact-view-pane">
+      <!-- MAIN PAGE HEADER BANNER -->
+      <section class="banner-header-section" style="background-image: url('https://ramadesignstudio.com/wp-content/uploads/2021/08/mark-marker-hand-516278.jpg');">
+        <div class="banner-header-overlay"></div>
+        <div class="banner-header-content">
+          <h1 class="banner-header-title">Contact</h1>
+        </div>
+      </section>
+
+      <!-- TWO COLUMN CONTACT BLOCK -->
+      <section class="contact-details-form-section">
+        <div class="contact-grid-container">
+          
+          <!-- LEFT SIDE: DIRECT CONTACT DETAILS -->
+          <div class="contact-info-column">
+            <h2 class="contact-section-heading">Contact Us</h2>
+            <p class="contact-section-subtext">You can reach us through our contact details below.</p>
+            
+            <ul class="contact-details-icon-list">
+              <!-- Email -->
+              <li class="contact-detail-row">
+                <span class="detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </span>
+                <span class="detail-text"><a href="mailto:info@ramadesignstudio.com">info@ramadesignstudio.com</a></span>
+              </li>
+              <!-- Phone -->
+              <li class="contact-detail-row">
+                <span class="detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </span>
+                <span class="detail-text"><a href="tel:+639178126815">+63 917 812 6815</a></span>
+              </li>
+              <!-- Office Hours -->
+              <li class="contact-detail-row align-start-detail">
+                <span class="detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </span>
+                <span class="detail-text">Office Hours: 9am - 5pm Mondays - Fridays Except Holidays</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- RIGHT SIDE: HIGH FIDELITY MASSAGING FORM -->
+          <div class="contact-form-column">
+            <h2 class="contact-section-heading">Send us a message.</h2>
+            <p class="contact-section-subtext">Please fill up the form and let us know how we can help you.</p>
+
+            <!-- Success notification trick: when form receives standard submit simulation -->
+            <form class="precision-wpforms-replica" action="#message-sent" method="POST" onsubmit="event.preventDefault(); document.getElementById('success-modal').style.display='flex';">
+              
+              <!-- Success modal mock inside form state -->
+              <div class="submission-success-notification" id="success-modal">
+                <div class="success-alert-box">
+                  <div class="checkmark-animation">✓</div>
+                  <h4 class="success-alert-title">Message Sent Successfully!</h4>
+                  <p class="success-alert-body">Thank you for contacting RAMA + Architectural Studio. We will get back to you shortly.</p>
+                  <button type="button" class="close-success-alert-btn" onclick="this.parentElement.parentElement.style.display='none';">Close</button>
+                </div>
+              </div>
+
+              <!-- Form fields -->
+              <div class="form-rows-stack">
+                <!-- Row 1: Name -->
+                <div class="form-group-wrap">
+                  <label class="form-field-label">Your Name <span class="required-star">*</span></label>
+                  <input type="text" placeholder="Your Name" required class="wpform-text-input">
+                </div>
+                <!-- Row 2: Email -->
+                <div class="form-group-wrap">
+                  <label class="form-field-label">Email <span class="required-star">*</span></label>
+                  <input type="email" placeholder="Email" required class="wpform-text-input">
+                </div>
+                <!-- Row 3: Phone -->
+                <div class="form-group-wrap">
+                  <label class="form-field-label">Contact Number <span class="required-star">*</span></label>
+                  <input type="text" placeholder="Contact Number" required class="wpform-text-input">
+                </div>
+                <!-- Row 4: Subject -->
+                <div class="form-group-wrap">
+                  <label class="form-field-label">Subject <span class="required-star">*</span></label>
+                  <input type="text" placeholder="Subject" required class="wpform-text-input">
+                </div>
+                <!-- Row 5: Message -->
+                <div class="form-group-wrap">
+                  <label class="form-field-label">Your Message <span class="required-star">*</span></label>
+                  <textarea placeholder="Your Message" required rows="5" class="wpform-text-area"></textarea>
+                </div>
+                <!-- Submit -->
+                <div class="form-group-wrap">
+                  <button type="submit" class="wpform-submit-btn">SEND MESSAGE</button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- 3. BUILDER'S WISDOM SECTION (Stays consistently visible as an inspiring global footer anchor) -->
+  <section class="builders-wisdom-quote-section">
+    <div class="quote-container">
+      <div class="quote-box">
+        <h5 class="quote-header-title">A BUILDER'S WISDOM QUOTE:</h5>
+        <p class="bible-verse-coordinates">Matthew 7:24-25, NIV</p>
+        <blockquote class="bible-verse-quote">
+          &ldquo;Therefore everyone who hears these words of mine and puts them into practice is like a wise man who built his house on the rock. The rain came down, the streams rose, and the winds blew and beat against that house; yet it did not fall, because it had its foundation on the rock.&rdquo;
+        </blockquote>
+        <p class="closing-glory">To GOD be the Glory!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BOTTOM LEGAL FOOTER (Global bottom anchor) -->
+  <footer class="app-baseline-footer" id="colophon">
+    <div class="footer-container">
+      <div class="copyright-meta-group">
+        <p class="footer-copy-text">Copyright &copy; 2026</p>
+        <p class="footer-copy-text bold-brand">RAMA + ARCHITECTURAL STUDIO</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

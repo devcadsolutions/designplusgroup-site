@@ -1,0 +1,6 @@
+{
+  "name": "Rama Design Studio",
+  "description": "A visually precise pure HTML and CSS clone of the Rama Design Studio architectural and build profile website.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
