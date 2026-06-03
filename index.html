@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Plus Landscape Consultancy</title>
+  <!-- Google Fonts Import: Montserrat with weights for high-profile architecture styling -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <!-- Link to the custom stylesheet -->
+  <!-- Favicon using SVG link -->
+  <link rel="icon" type="image/svg+xml" href="./assets/logo-BdXJkIQE.svg">
+  <script type="module" crossorigin src="./assets/index-DOQdvUk0.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-wm2wGmmA.css">
+</head>
+<body class="home-page-template">
+
+  <!-- PAGE ROUTING SYSTEMS (Pure CSS Radio Tab Controllers) -->
+  <input type="radio" name="route-switch" id="route-home" checked class="route-switch-trigger">
+  <input type="radio" name="route-switch" id="route-articles" class="route-switch-trigger">
+  <input type="radio" name="route-switch" id="route-about" class="route-switch-trigger">
+  <input type="radio" name="route-switch" id="route-contact" class="route-switch-trigger">
+  <input type="radio" name="route-switch" id="route-portfolio-detail" class="route-switch-trigger">
+
+  <!-- 1. TRANSPARENT HEADER BAR (Fixed at Top, outside viewport container but styling relies on active route state) -->
+  <header class="app-header" id="masthead">
+    <div class="header-inner-container">
+      <div class="site-branding">
+        <!-- Clicking logo brings you back to home route -->
+        <label for="route-home" class="logo-link">
+          <img class="site-logo" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%20width='100%25'%20height='100%25'%3e%3c!--%20Left%20compound%20gold%20shape%20--%3e%3cpath%20d='M%20146,46%20L%20246,46%20L%20246,346%20L%2046,346%20L%2046,166%20L%20146,166%20Z'%20fill='%239ea353'%20/%3e%3c!--%20Right%20compound%20gold%20shape%20--%3e%3cpath%20d='M%20266,166%20L%20466,166%20L%20466,346%20L%20366,346%20L%20366,466%20L%20266,466%20Z'%20fill='%239ea353'%20/%3e%3c!--%20Top-Right%20navy%20square%20--%3e%3crect%20x='266'%20y='46'%20width='100'%20height='100'%20fill='%2326324e'%20/%3e%3c!--%20Bottom-Left%20navy%20square%20--%3e%3crect%20x='146'%20y='366'%20width='100'%20height='100'%20fill='%2326324e'%20/%3e%3c/svg%3e" alt="Design Plus Landscape Consultancy" referrerPolicy="no-referrer">
+        </label>
+        <div class="brand-text-wrap">
+          <h1 class="brand-title"><label for="route-home">DESIGN PLUS</label></h1>
+          <p class="brand-tagline">LANDSCAPE CONSULTANCY &amp; DESIGN-LED ARCHITECTURE</p>
+        </div>
+      </div>
+
+      <!-- CSS-Only Hamburger Toggle Hack -->
+      <input type="checkbox" id="menu-toggle-input" class="menu-toggle-checkbox">
+      <label for="menu-toggle-input" class="menu-toggle-label" aria-label="Toggle navigation menu">
+        <span class="hamburger-bar"></span>
+      </label>
+
+      <nav class="navigation-menu-bar">
+        <ul class="nav-links-list">
+          <li><label for="route-home" class="nav-item home-nav">Home</label></li>
+          <li><label for="route-articles" class="nav-item articles-nav">Portfolio</label></li>
+          <li><label for="route-about" class="nav-item about-nav">About Us</label></li>
+          <li><label for="route-contact" class="nav-item contact-nav">Contact</label></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 2. ROUTED VIEWPORTS (Content containers toggle based on selected radio filter) -->
+  <main class="page-viewport">
+
+    <!-- ==============================================
+         TAB 1: HOME PAGE VIEW
+         ============================================== -->
+    <div class="page-view" id="home-view-pane">
+      <!-- HERO SLIDESHOW SECTION -->
+      <section class="hero-slideshow-section" id="hero-banner">
+        <div class="slideshow-container">
+          <div class="slide slide-1"></div>
+          <div class="slide slide-2"></div>
+          <div class="slide slide-3"></div>
+          <div class="slide slide-4"></div>
+        </div>
+        <div class="slideshow-overlay"></div>
+        <div class="hero-content">
+          <h5 class="welcome-pre">Welcome to</h5>
+          <h2 class="welcome-main">Design Plus Landscape Consultancy</h2>
+        </div>
+      </section>
+
+      <!-- WELCOME INFORMATION SECTION -->
+      <section class="welcome-intro-section">
+        <div class="intro-container" id="welcome-intro">
+          <h5 class="glow-tag">EXPERTISE</h5>
+          <div class="intro-text-block">
+            <p class="intro-paragraph-bold">
+              Founded in 2020, our firm is a design-led startup built on a foundation of architectural and landscaping excellence. We are a collective of experienced and forward-thinking architects, engineers, and BIM specialists who bring global insight and local relevance to every project.
+            </p>
+            <p class="intro-paragraph-standard">
+              Our approach is rooted in creativity, precision, and adaptability. We interpret architectural spaces through the lens of contemporary design and international standards, offering a full spectrum of services—from concept development and interior landscape planning to MEP conceptual design and construction documentation. Every project is an opportunity to craft value-added environments that elevate user experience and client impact.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT WE DO BEST SECTION -->
+      <section class="what-we-do-best-section">
+        <div class="section-container">
+          <div class="section-header">
+            <h1 class="header-heading">What we do best</h1>
+            <h5 class="header-subtitle">Our Service Specialties</h5>
+          </div>
+
+          <div class="specialties-cards-grid">
+            <!-- Card 1 -->
+            <article class="specialty-card">
+              <div class="card-media-wrapper">
+                <img class="card-image" src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80" alt="Landscape Design render representation" referrerPolicy="no-referrer">
+              </div>
+              <h3 class="card-title">LANDSCAPE DESIGN</h3>
+              <p class="card-description">
+                <strong>Crafting Beautiful Spaces</strong><br>
+                Craft stunning, sustainable landscapes tailored to your vision—collaborating closely to deliver cohesive designs that reflect your style and elevate the natural environment.
+              </p>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="specialty-card">
+              <div class="card-media-wrapper">
+                <img class="card-image" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" alt="Consultancy Services representation" referrerPolicy="no-referrer">
+              </div>
+              <h3 class="card-title">CONSULTANCY SERVICES</h3>
+              <p class="card-description">
+                <strong>Expert Strategy Guidance</strong><br>
+                Offer expert guidance on landscape planning, sustainability, and project feasibility—delivering comprehensive assessments and strategic advice to support informed decisions, optimize success, and align every project with environmental standards and your goals.
+              </p>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="specialty-card">
+              <div class="card-media-wrapper">
+                <img class="card-image" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="Technical Documentation representation" referrerPolicy="no-referrer">
+              </div>
+              <h3 class="card-title">TECHNICAL DOCUMENTATION</h3>
+              <p class="card-description">
+                <strong>Precise Master Planning</strong><br>
+                Provide precise, clear technical documentation—including detailed plans, specifications, and reports—that drives successful project execution, fosters seamless collaboration, and ensures smooth progression from concept to completion.
+              </p>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="specialty-card">
+              <div class="card-media-wrapper">
+                <img class="card-image" src="https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=800&q=80" alt="BIM representation" referrerPolicy="no-referrer">
+              </div>
+              <h3 class="card-title">BIM &amp; OUR APPROACH</h3>
+              <p class="card-description">
+                <strong>Cohesion Across Disciplines</strong><br>
+                BIM modeling is central to how we work—it keeps our teams aligned, our process efficient, and our communication clear across disciplines and partners, whether local or international. Our MEP conceptual design starts early, ensuring systems are well-integrated with the architecture.
+              </p>
+            </article>
+          </div>
+
+          <!-- Banner quote -->
+          <div class="specialties-inline-banner">
+            <h4 class="banner-quote-text">"Designing with Purpose, Delivering with Precision."</h4>
+          </div>
+        </div>
+      </section>
+
+      <!-- OUR END-TO-END SOLUTIONS -->
+      <section class="end-to-end-solutions-section">
+        <div class="section-container">
+          <div class="solutions-header">
+            <h5 class="solutions-subtitle">Our Design &amp; Consultancy Solutions</h5>
+                <div class="solutions-cards-grid">
+            <!-- Service 1 -->
+            <div class="solution-card">
+              <div class="solution-media">
+                <img class="solution-img" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Pre-Design Services visual" referrerPolicy="no-referrer">
+              </div>
+              <h3 class="solution-title">Pre-Design &amp; Feasibility</h3>
+              
+              <!-- Pure CSS Accordion Item -->
+              <details class="solution-accordion">
+                <summary class="accordion-trigger">
+                  <span class="click-text">See Full List</span>
+                  <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </summary>
+                <div class="accordion-content">
+                  <ul class="check-list">
+                    <li>Client Consultations &amp; Project Alignment</li>
+                    <li>Landscape Pre-Feasibility &amp; Feasibility Studies</li>
+                    <li>Site Selection, Utilization &amp; Topography Analysis</li>
+                    <li>Zoning, Municipal &amp; Building Code Compliance Reviews</li>
+                    <li>Sustainable Environmental Land-Use Studies</li>
+                    <li>Creative Design Brief Preparation</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="solution-card">
+              <div class="solution-media">
+                <img class="solution-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Design Services visual" referrerPolicy="no-referrer">
+              </div>
+              <h3 class="solution-title">Landscape Architectural Design</h3>
+              
+              <!-- Pure CSS Accordion Item -->
+              <details class="solution-accordion">
+                <summary class="accordion-trigger">
+                  <span class="click-text">See Full List</span>
+                  <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </summary>
+                <div class="accordion-content">
+                  <ul class="nested-services-list">
+                    <li>
+                      <strong>Concept Design Phase</strong>
+                      <p>Mood Boards, Context Frame, Initial Plant Palette Sketches, and Spatial Master Planning</p>
+                    </li>
+                    <li>
+                      <strong>Schematic Design Phase</strong>
+                      <p>Detailed Spatial Layouts, Level Plans, Grading Typologies, and Initial Elevation Sections</p>
+                    </li>
+                    <li>
+                      <strong>Design Development Phase</strong>
+                      <p>Material Callouts, Planting Schedules, Lighting Matrices, and MEP Conceptual System Layouts</p>
+                    </li>
+                    <li>
+                      <strong>Contract Documents &amp; Construction Sets</strong>
+                      <p>Complete Construction Drawing Sets, Finishes, Technical Standard Specs, Bill of Quantity Estimates, and Tender Assistance</p>
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="solution-card">
+              <div class="solution-media">
+                <img class="solution-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Build Services visual" referrerPolicy="no-referrer">
+              </div>
+              <h3 class="solution-title">Engineering &amp; Coordination</h3>
+              
+              <!-- Pure CSS Accordion Item -->
+              <details class="solution-accordion">
+                <summary class="accordion-trigger">
+                  <span class="click-text">See Full List</span>
+                  <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </summary>
+                <div class="accordion-content">
+                  <ul class="check-list">
+                    <li>MEP Conceptual Design Integration</li>
+                    <li>Dedicated Irrigation and Drainage Engineering</li>
+                    <li>Outdoor Structural Foundation Layout plans</li>
+                    <li>BIM Modeling Clash Detection &amp; Coordination</li>
+                    <li>Quality Control, Clash Checks &amp; Constructability Assurance</li>
+                    <li>Materials Technical Specifications &amp; Reports</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="solution-card">
+              <div class="solution-media">
+                <img class="solution-img" src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80" alt="Virtual Project Development visual" referrerPolicy="no-referrer">
+              </div>
+              <h3 class="solution-title">Virtual Modeling &amp; Rendering</h3>
+              
+              <!-- Pure CSS Accordion Item -->
+              <details class="solution-accordion">
+                <summary class="accordion-trigger">
+                  <span class="click-text">See Full List</span>
+                  <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </summary>
+                <div class="accordion-content">
+                  <ul class="check-list">
+                    <li>2D Plans to Immersive 3D Spatial Conversions</li>
+                    <li>Photorealistic 3D Material Mapping &amp; Texturing</li>
+                    <li>Daytime &amp; Nighttime Outdoor Lighting Path Simulations</li>
+                    <li>Bespoke Immersive 3D Walkthrough Videos</li>
+                    <li>Aerial Fly-through &amp; Animated Site Simulations</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <!-- Banner quote -->
+          <div class="solutions-inline-banner">
+            <h4 class="banner-quote-text">"Leading with innovation and sustainability to create inspiring architectural landscapes."</h4>
+          </div>
+        </div>
+      </section>
+
+      <!-- FRONT PAGE HIGHLIGHTED ARTICLES -->
+      <section class="featured-articles-section">
+        <div class="section-container">
+          <div class="articles-header">
+            <h2 class="articles-title">Featured Portfolio Projects:</h2>
+          </div>
+
+          <div class="articles-cards-grid">
+            <!-- Project 1: Canadian International School -->
+            <article class="article-grid-card">
+              <div class="article-thumbnail-wrapper">
+                <img class="article-img" src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1280&q=80" alt="Canadian International School" referrerPolicy="no-referrer">
+                <div class="article-hover-overlay">
+                  <svg class="arrow-overlay-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="article-content-wrapper">
+                <h4 class="article-title-heading"><label for="route-articles">Canadian International School</label></h4>
+                <div class="article-meta">
+                  <span class="author">by Design Plus UAE</span>
+                  <span class="meta-dot">&bull;</span>
+                  <span class="date">Completed 2022</span>
+                </div>
+                <p class="article-excerpt">
+                  A high-profile biophilic campus master plan incorporating active learning plazas, sustainable flora parameters, and modern community arenas.
+                </p>
+                <label for="route-articles" class="read-more-btn">View Details</label>
+              </div>
+            </article>
+
+            <!-- Project 2: Al Marjan Residential Tower -->
+            <article class="article-grid-card">
+              <div class="article-thumbnail-wrapper">
+                <img class="article-img" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1280&q=80" alt="Al Marjan Residential Tower" referrerPolicy="no-referrer">
+                <div class="article-hover-overlay">
+                  <svg class="arrow-overlay-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="article-content-wrapper">
+                <h4 class="article-title-heading"><label for="route-articles">Al Marjan Residential Tower</label></h4>
+                <div class="article-meta">
+                  <span class="author">by Luxe Developers / Dewan</span>
+                  <span class="meta-dot">&bull;</span>
+                  <span class="date">Completed 2024</span>
+                </div>
+                <p class="article-excerpt">
+                  High-profile residential design focusing on detailed landscape drawings based on the client’s concept, refining planting, hardscapes, and luxury standards.
+                </p>
+                <label for="route-articles" class="read-more-btn">View Details</label>
+              </div>
+            </article>
+
+            <!-- Project 3: Jumeirah Private Villa -->
+            <article class="article-grid-card">
+              <div class="article-thumbnail-wrapper">
+                <img class="article-img" src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1280&q=80" alt="Jumeirah Private Villa" referrerPolicy="no-referrer">
+                <div class="article-hover-overlay">
+                  <svg class="arrow-overlay-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="article-content-wrapper">
+                <h4 class="article-title-heading"><label for="route-articles">Jumeirah Private Villa</label></h4>
+                <div class="article-meta">
+                  <span class="author">by Design Plus UAE</span>
+                  <span class="meta-dot">&bull;</span>
+                  <span class="date">Completed 2023</span>
+                </div>
+                <p class="article-excerpt">
+                  Custom high-end architectural definition, fluid interior-to-landscape transition frameworks, and bespoke garden design.
+                </p>
+                <label for="route-articles" class="read-more-btn">View Details</label>
+              </div>
+            </article>
+
+            <!-- Project 4: Equestrian Club -->
+            <article class="article-grid-card">
+              <div class="article-thumbnail-wrapper">
+                <img class="article-img" src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1280&q=80" alt="Equestrian Club" referrerPolicy="no-referrer">
+                <div class="article-hover-overlay">
+                  <svg class="arrow-overlay-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="article-content-wrapper">
+                <h4 class="article-title-heading"><label for="route-articles">Equestrian Club</label></h4>
+                <div class="article-meta">
+                  <span class="author">by Design Plus UAE</span>
+                  <span class="meta-dot">&bull;</span>
+                  <span class="date">Completed 2025</span>
+                </div>
+                <p class="article-excerpt">
+                  A bespoke equestrian complex and multi-functional recreation escape, emphasizing environmental and sustainable landscape engineering.
+                </p>
+                <label for="route-articles" class="read-more-btn">View Details</label>
+              </div>
+            </article>
+          </div>
+
+          <div class="load-more-btn-container">
+            <label for="route-articles" class="load-more-grid-btn">Explore Full Portfolio</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECT CONSULTATION PROMO PANEL -->
+      <section class="consultation-promo-section">
+        <div class="promo-container">
+          <h2 class="promo-title">Tell us about your project!</h2>
+          <p class="promo-description">
+            Don’t hesitate to contact us. We’ll be happy to discuss with you in detail, answer your queries and provide solutions.
+          </p>
+          <div class="promo-button-wrap">
+            <label for="route-contact" class="message-action-btn">SEND US A MESSAGE</label>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==============================================
+         TAB 2: PORTFOLIO VIEW PANE
+         ============================================== -->
+    <div class="page-view" id="articles-view-pane">
+      <!-- MAIN PAGE HEADER BANNER -->
+      <section class="banner-header-section" style="background-image: url('https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1600&q=80');">
+        <div class="banner-header-overlay"></div>
+        <div class="banner-header-content">
+          <h1 class="banner-header-title">Our Portfolio</h1>
+          <p class="banner-header-subtitle">Canadian International School &amp; More</p>
+        </div>
+      </section>
+
+      <!-- TWO COLUMN LAYOUT: MAIN CONTENT + SIDEBAR -->
+      <section class="archive-container-section">
+        <div class="archive-inner-wrap">
+          
+          <!-- LEFT SIDE: PORTFOLIO LIST -->
+          <div class="archive-main-column">
+            
+            <!-- Trending Slider / Content Ticker -->
+            <div class="trending-ticker-container">
+              <div class="ticker-badge">Trending Projects</div>
+              <div class="ticker-scroller-wrap">
+                <ul class="ticker-items-scroller">
+                  <li><span class="bullet-ticker">&bull;</span>Canadian International School - Biophilic Learning Campus</li>
+                  <li><span class="bullet-ticker">&bull;</span>Al Marjan Residential Tower - High-End Luxury Landscape</li>
+                  <li><span class="bullet-ticker">&bull;</span>Jumeirah Private Villa - Luxury Contemporary Oasis</li>
+                  <li><span class="bullet-ticker">&bull;</span>Stem Cell Centre - Therapeutic Healing Gardens</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Explore Our Portfolio Intro Feature Card -->
+            <div class="explore-intro-feature-card">
+              <div class="explore-intro-content">
+                <h2 class="explore-intro-title">Explore our portfolio</h2>
+                <p class="explore-intro-text">
+                  Bringing people, design, and technology together to think bigger and act bolder across diverse sectors—from residential and commercial to cultural, institutional, and public realm projects.
+                </p>
+              </div>
+              <div class="explore-intro-image-box">
+                <img class="explore-intro-img" src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1280&q=80" alt="Design Plus Landscape Master Plan Representation" referrerPolicy="no-referrer">
+              </div>
+            </div>
+
+            <!-- ==============================================
+                 SECTOR: RESIDENTIAL
+                 ============================================== -->
+            <div class="portfolio-sector-group" id="sector-residential">
+              <h2 class="sector-group-heading">Residential Projects</h2>
+              <div class="posts-archive-grid">
+                
+                <!-- Project 1 -->
+                <article class="article-archive-card">
+                  <div class="archive-thumbnail-box">
+                    <img class="archive-card-img" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1280&q=80" alt="Al Marjan Residential Tower" referrerPolicy="no-referrer">
+                    <span class="archive-card-category">Residential</span>
+                  </div>
+                  <div class="archive-content-box">
+                    <h3 class="archive-card-heading">Al Marjan Residential Tower</h3>
+                    <div class="archive-card-meta">
+                      <span>Completed 2024</span>
+                      <span class="meta-separator">&bull;</span>
+                      <span>Luxe Developers / Dewan</span>
+                    </div>
+                    <p class="archive-card-excerpt">
+                      High-end landscape design based on the client’s concept, refining elements such as planting, hardscapes, and materials to align with luxury standards.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="article-archive-card">
+                  <div class="archive-thumbnail-box">
+                    <img class="archive-card-img" src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1280&q=80" alt="Jumeirah Private Villa" referrerPolicy="no-referrer">
+                    <span class="archive-card-category">Residential</span>
+                  </div>
+                  <div class="archive-content-box">
+                    <h3 class="archive-card-heading">Jumeirah Private Villa</h3>
+                    <div class="archive-card-meta">
+                      <span>Completed 2023</span>
+                      <span class="meta-separator">&bull;</span>
+                      <span>Design Plus UAE</span>
+                    </div>
+                    <p class="archive-card-excerpt">
+                      A luxurious custom estate garden in Jumeirah, featuring modern structural architectural frames, biophilic water channels, spatial pool layouts, and fluid transitions.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="article-archive-card">
+                  <div class="archive-thumbnail-box">
+                    <img class="archive-card-img" src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1280&q=80" alt="Residential Podium" referrerPolicy="no-referrer">
+                    <span class="archive-card-category">Residential</span>
+                  </div>
+                  <div class="archive-content-box">
+                    <h3 class="archive-card-heading">Residential Podium</h3>
+                    <div class="archive-card-meta">
+                      <span>Completed 2024</span>
+                      <span class="meta-separator">&bull;</span>
+                      <span>Design Plus UAE</span>
+                    </div>
+                    <p class="archive-card-excerpt">
+                      Elegant urban community podium project designed to introduce lush foliage, social gathering decks, and natural stone walks into complex structural concrete elevations.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="article-archive-card">
+                  <div class="archive-thumbnail-box">
+                    <img class="archive-card-img" src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1280&q=80" alt="Equestrian Club" referrerPolicy="no-referrer">
+                    <span class="archive-card-category">Residential</span>
+                  </div>
+                  <div class="archive-content-box">
+                    <h3 class="archive-card-heading">Equestrian Club</h3>
+                    <div class="archive-card-meta">
+                      <span>Completed 2025</span>
+                      <span class="meta-separator">&bull;</span>
+                      <span>Design Plus UAE</span>
+                    </div>
+                    <p class="archive-card-excerpt">
+                      Premier multi-functional recreational resort spaces blending horse arenas, training fields, and guest lounges with native flora landscaping, and sustainable grading layouts.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Project 5 -->
+                <article class="article-archive-card">
+                  <div class="archive-thumbnail-box">
+                    <img class="archive-card-img" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1280&q=80" alt="Al Sufuoh Private Residence" referrerPolicy="no-referrer">
+                    <span class="archive-card-category">Residential</span>
+                  </div>
+                  <div class="archive-content-box">
+                    <h3 class="archive-card-heading">Al Sufuoh Private Residence</h3>
+                    <div class="archive-card-meta">
+                      <span>Completed 2024</span>
+                      <span class="meta-separator">&bull;</span>
+                      <span>Design Plus UAE</span>
+                    </div>
+                    <p class="archive-card-excerpt">
+                      Waterfront custom mansion estate with complex level variances, coastal soil engineering, native palm tree palettes, and luxury cabanas.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Project 6 -->
+                <article class="article-archive-card">
+                  <div class="archive-thumbnail-box">
+                    <img class="archive-card-img" src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1280&q=80" alt="Private Villa" referrerPolicy="no-referrer">
+                    <span class="archive-card-category">Residential</span>
+                  </div>
+                  <div class="archive-content-box">
+                    <h3 class="archive-card-heading">Private Villa</h3>
+                    <div class="archive-card-meta">
+                      <span>Completed 2023</span>
+                      <span class="meta-separator">&bull;</span>
+                      <span>Design Plus UAE</span>
+                    </div>
+                    <p class="archive-card-excerpt">
+                      Clean modern geometric patios, pristine lawn grading, feature lighting systems, and stone planter coordinates tailored for family leisure.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Project 7 -->
+                <article class="article-archive-card">
+                  <div class="archive-thumbnail-box">
+                    <img class="archive-card-img" src="https://images.unsplash.com/photo-1596701062351-df1f8d368a85?auto=format&fit=crop&w=1280&q=80" alt="Abu Dhabi Private Gardens" referrerPolicy="no-referrer">
+                    <span class="archive-card-category">Residential</span>
+                  </div>
+                  <div class="archive-content-box">
+                    <h3 class="archive-card-heading">Abu Dhabi Private Gardens</h3>
+                    <div class="archive-card-meta">
+                      <span>Completed 2024</span>
+                      <span class="meta-separator">&bull;</span>
+                      <span>Design Plus UAE</span>
+                    </div>
+                    <p class="archive-card-excerpt">
+                      Refined desert landscape gardens incorporating private pathways, shading pavilions, biophilic features, and low-water native flora collections.
+                    </p>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+
+            <!-- ==============================================
+                 SECTOR: EDUCATION
+                 ============================================== -->
+            <div class="portfolio-sector-group" id="sector-education">
+              <h2 class="sector-group-heading">Education Projects</h2>
+              <div class="posts-archive-grid">
+                
+                <!-- Project 8 -->
+                <article class="article-archive-card">
+                  <div class="archive-thumbnail-box">
+                    <img class="archive-card-img" src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1280&q=80" alt="Canadian International School" referrerPolicy="no-referrer">
+                    <span class="archive-card-category">Education</span>
+                  </div>
+                  <div class="archive-content-box">
+                    <h3 class="archive-card-heading">Canadian International School</h3>
+                    <div class="archive-card-meta">
+                      <span>Completed 2022</span>
+                      <span class="meta-separator">&bull;</span>
+                      <span>Design Plus UAE</span>
+                    </div>
+                    <p class="archive-card-excerpt">
+                      Biophilic learning campus integration featuring collaborative student plazas, safe learning gardens, play landscapes, and robust exterior assembly structures.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Project 9 -->
+                <article class="article-archive-card">
+                  <div class="archive-thumbnail-box">
+                    <img class="archive-card-img" src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1280&q=80" alt="University Campus" referrerPolicy="no-referrer">
+                    <span class="archive-card-category">Education</span>
+                  </div>
+                  <div class="archive-content-box">
+                    <h3 class="archive-card-heading">University Campus</h3>
+                    <div class="archive-card-meta">
+                      <span>Completed 2023</span>
+                      <span class="meta-separator">&bull;</span>
+                      <span>Design Plus UAE</span>
+                    </div>
+                    <p class="archive-card-excerpt">
+                      Academic walkways and courtyard designs promoting social student gathering, featuring solar shade trees and modern stone sitting benches.
+                    </p>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+
+            <!-- ==============================================
+                 SECTOR: HEALTH SCIENCES
+                 ============================================== -->
+            <div class="portfolio-sector-group" id="sector-health">
+              <h2 class="sector-group-heading">Health Sciences</h2>
+              <div class="posts-archive-grid">
+                
+                <!-- Project 10 -->
+                <article class="article-archive-card">
+                  <div class="archive-thumbnail-box">
+                    <img class="archive-card-img" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1280&q=80" alt="Stem Cell Centre" referrerPolicy="no-referrer">
+                    <span class="archive-card-category">Health Sciences</span>
+                  </div>
+                  <div class="archive-content-box">
+                    <h3 class="archive-card-heading">Stem Cell Centre</h3>
+                    <div class="archive-card-meta">
+                      <span>Completed 2024</span>
+                      <span class="meta-separator">&bull;</span>
+                      <span>Design Plus UAE</span>
+                    </div>
+                    <p class="archive-card-excerpt">
+                      Therapeutic garden spaces designed to offer tranquility, healing layouts, and meditative water channels for clinical staff and patient healing.
+                    </p>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+
+            <!-- ==============================================
+                 SECTOR: COMMUNITY
+                 ============================================== -->
+            <div class="portfolio-sector-group" id="sector-community">
+              <h2 class="sector-group-heading">Community &amp; Social</h2>
+              <div class="posts-archive-grid">
+                
+                <!-- Project 11 -->
+                <article class="article-archive-card">
+                  <div class="archive-thumbnail-box">
+                    <img class="archive-card-img" src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&w=1280&q=80" alt="Neighborhood Park" referrerPolicy="no-referrer">
+                    <span class="archive-card-category">Community</span>
+                  </div>
+                  <div class="archive-content-box">
+                    <h3 class="archive-card-heading">Neighborhood Park</h3>
+                    <div class="archive-card-meta">
+                      <span>Completed 2023</span>
+                      <span class="meta-separator">&bull;</span>
+                      <span>Design Plus UAE</span>
+                    </div>
+                    <p class="archive-card-excerpt">
+                      Recreational green spaces combining child play areas, cycling lanes, community picnic decks, and drought-tolerant shading schemes.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Project 12 -->
+                <article class="article-archive-card">
+                  <div class="archive-thumbnail-box">
+                    <img class="archive-card-img" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1280&q=80" alt="Private Residences" referrerPolicy="no-referrer">
+                    <span class="archive-card-category">Community</span>
+                  </div>
+                  <div class="archive-content-box">
+                    <h3 class="archive-card-heading">Private Residences</h3>
+                    <div class="archive-card-meta">
+                      <span>Completed 2024</span>
+                      <span class="meta-separator">&bull;</span>
+                      <span>Design Plus UAE</span>
+                    </div>
+                    <p class="archive-card-excerpt">
+                      Multi-family residential community park designed to maximize social interactions, green space density, local microclimates, and sustainable irrigation channels.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Project 13 -->
+                <article class="article-archive-card">
+                  <div class="archive-thumbnail-box">
+                    <img class="archive-card-img" src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1280&q=80" alt="Resort Living" referrerPolicy="no-referrer">
+                    <span class="archive-card-category">Community</span>
+                  </div>
+                  <div class="archive-content-box">
+                    <h3 class="archive-card-heading">Resort Living</h3>
+                    <div class="archive-card-meta">
+                      <span>Completed 2025</span>
+                      <span class="meta-separator">&bull;</span>
+                      <span>Design Plus UAE</span>
+                    </div>
+                    <p class="archive-card-excerpt">
+                      Contemporary luxury resort development containing immersive coastal gardens, natural stone waterways, organic seating places, and native tree screens.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Project 14 -->
+                <article class="article-archive-card">
+                  <div class="archive-thumbnail-box">
+                    <img class="archive-card-img" src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=1280&q=80" alt="Golf Villa Residence" referrerPolicy="no-referrer">
+                    <span class="archive-card-category">Community</span>
+                  </div>
+                  <div class="archive-content-box">
+                    <h3 class="archive-card-heading">Golf Villa Residence</h3>
+                    <div class="archive-card-meta">
+                      <span>Completed 2024</span>
+                      <span class="meta-separator">&bull;</span>
+                      <span>Design Plus UAE</span>
+                    </div>
+                    <p class="archive-card-excerpt">
+                      Elevated golf course villa landscapes linking pristine fairways with private infinity pool designs and custom hardscape retaining walls.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Project 15 -->
+                <article class="article-archive-card">
+                  <div class="archive-thumbnail-box">
+                    <img class="archive-card-img" src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1280&q=80" alt="Residential Community" referrerPolicy="no-referrer">
+                    <span class="archive-card-category">Community</span>
+                  </div>
+                  <div class="archive-content-box">
+                    <h3 class="archive-card-heading">Residential Community</h3>
+                    <div class="archive-card-meta">
+                      <span>Completed 2025</span>
+                      <span class="meta-separator">&bull;</span>
+                      <span>Design Plus UAE</span>
+                    </div>
+                    <p class="archive-card-excerpt">
+                      Master-planned suburban gated residential neighborhood combining green trails, security buffers, bioswales, and communal parklands.
+                    </p>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT SIDE: RICH SIDEBAR PANELS -->
+          <aside class="archive-sidebar-column">
+            
+            <!-- Widget 1: Pure HTML/CSS Interactive Sector Navigation -->
+            <div class="sidebar-widget">
+              <h4 class="widget-title">Project Sectors</h4>
+              <ul class="widget-list">
+                <li><a href="#sector-residential">Residential &amp; Villas <span class="widget-count">(7)</span></a></li>
+                <li><a href="#sector-education">Education Campuses <span class="widget-count">(2)</span></a></li>
+                <li><a href="#sector-health">Health Sciences <span class="widget-count">(1)</span></a></li>
+                <li><a href="#sector-community">Community &amp; Social <span class="widget-count">(5)</span></a></li>
+              </ul>
+            </div>
+
+            <!-- Widget 2: Recent Projects Content Match -->
+            <div class="sidebar-widget">
+              <h4 class="widget-title">Featured Works</h4>
+              <ul class="recent-articles-sidebar-list">
+                <li>
+                  <a href="#sector-education" class="recent-item-link">Canadian International School</a>
+                  <span class="recent-item-date">Completed 2022</span>
+                </li>
+                <li>
+                  <a href="#sector-residential" class="recent-item-link">Al Marjan Residential Tower</a>
+                  <span class="recent-item-date">Completed 2024</span>
+                </li>
+                <li>
+                  <a href="#sector-residential" class="recent-item-link">Jumeirah Private Villa</a>
+                  <span class="recent-item-date">Completed 2023</span>
+                </li>
+                <li>
+                  <a href="#sector-health" class="recent-item-link">Stem Cell Centre</a>
+                  <span class="recent-item-date">Completed 2024</span>
+                </li>
+                <li>
+                  <a href="#sector-community" class="recent-item-link">Neighborhood Park</a>
+                  <span class="recent-item-date">Completed 2023</span>
+                </li>
+              </ul>
+            </div>
+
+          </aside>
+
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==============================================
+         TAB 3: ABOUT US VIEW (Design Principles + Hover Image Accordion)
+         ============================================== -->
+    <div class="page-view" id="about-view-pane">
+      <!-- MAIN PAGE HEADER BANNER -->
+      <section class="banner-header-section" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80');">
+        <div class="banner-header-overlay"></div>
+        <div class="banner-header-content">
+          <h1 class="banner-header-title">About Us.</h1>
+        </div>
+      </section>
+
+      <!-- OUR DESIGN PRINCIPLES STATEMENT Block -->
+      <section class="about-statement-section">
+        <div class="about-statement-container">
+          <h4 class="statement-subtitle">OUR DESIGN PRINCIPLES</h4>
+          <h2 class="statement-headline">
+            At Design Plus Landscape Consultancy, we focus on bringing creativity, technical excellence, and environmental sustainability to every landscape project.
+          </h2>
+          <hr class="statement-divider">
+          <p class="statement-subtext">
+            We advocate for forward-thinking spatial designs to help communities and environments thrive in perfect harmony.
+          </p>
+        </div>
+      </section>
+
+      <!-- HORIZONTAL HOVER IMAGE ACCORDION BLOCK (Pristine elementor replication) -->
+      <section class="hover-accordion-section">
+        <div class="hover-accordion-wrapper">
+          
+          <!-- Accordion Panel 1: Functionality -->
+          <div class="accordion-panel panel-1" style="background-image: url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80');" tabindex="0">
+            <div class="panel-overlay"></div>
+            <div class="panel-content">
+              <h3 class="panel-title">LANDSCAPE DESIGN</h3>
+              <p class="panel-desc">We blend creative spatial flows with sustainable landscape designs tailored specifically to contextual local flora, site levels, and topography.</p>
+            </div>
+          </div>
+
+          <!-- Accordion Panel 2: Sustainability -->
+          <div class="accordion-panel panel-2" style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80');" tabindex="0">
+            <div class="panel-overlay"></div>
+            <div class="panel-content">
+              <h3 class="panel-title">SUSTAINABILITY</h3>
+              <p class="panel-desc">Delivering outstanding modern landscape solutions that blend native plants, water efficiency, and eco-friendly features to protect and enhance green environments.</p>
+            </div>
+          </div>
+
+          <!-- Accordion Panel 3: Resilience -->
+          <div class="accordion-panel panel-3" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80');" tabindex="0">
+            <div class="panel-overlay"></div>
+            <div class="panel-content">
+              <h3 class="panel-title">PRESILIENCE</h3>
+              <p class="panel-desc">Detailed 2D/3D layout specifications and advanced irrigation systems ensure constructability and longevity, leaving nothing to chance from sketch to build.</p>
+            </div>
+          </div>
+
+          <!-- Accordion Panel 4: Organic -->
+          <div class="accordion-panel panel-4" style="background-image: url('https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=800&q=80');" tabindex="0">
+            <div class="panel-overlay"></div>
+            <div class="panel-content">
+              <h3 class="panel-title">OUR BIM VISION</h3>
+              <p class="panel-desc">Our BIM modeling workflow enables multi-disciplinary design and coordination with engineers, contractors and architects worldwide.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- WHO WE ARE SECTION (Google Sites Integration) -->
+      <section class="about-g-who-we-are">
+        <div class="about-g-container">
+          <div class="about-g-grid">
+            <div class="about-g-text-col">
+              <span class="about-g-section-tag">WHO WE ARE</span>
+              <h2 class="about-g-title">Design Plus Landscape Consultancy</h2>
+              <p class="about-g-description">
+                Design Plus Landscape Consultancy is an innovative start-up in the UAE, founded by experts in architecture, civil works, landscape design, and technical documentation. We transform outdoor spaces into sustainable, functional, and aesthetically pleasing environments, enhancing the quality of life for communities and businesses across the UAE.
+              </p>
+              <div class="about-g-quote">
+                "Here at Design Plus, we strive to make sure our clients are happy while also being at the forefront of sustainable landscape design innovation."
+              </div>
+            </div>
+            <div class="about-g-image-col">
+              <div class="about-g-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" alt="We transform outdoor spaces" class="about-g-img" referrerPolicy="no-referrer">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VISION & MISSION SECTION -->
+      <section class="about-g-vision-mission">
+        <div class="about-g-container">
+          <div class="about-g-split-grid">
+            
+            <!-- Vision Card -->
+            <div class="about-g-split-card">
+              <div class="about-g-split-image-box">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Our Vision" class="about-g-split-img" referrerPolicy="no-referrer">
+                <div class="about-g-card-overlay"></div>
+                <div class="about-g-card-tag">VISION</div>
+              </div>
+              <div class="about-g-split-content">
+                <h3 class="about-g-card-title">Our Vision</h3>
+                <p class="about-g-card-text">
+                  To become the <strong>premier landscape consultancy in the UAE and worldwide</strong>, recognized for our <strong>creative designs</strong>, <strong>sustainable practices</strong>, and <strong>exceptional client service</strong>. We strive to help our clients transform their projects into <strong>inspiring and harmonious environments</strong> that <strong>benefit the end-user</strong> and <strong>add significant value</strong> to our clients.
+                </p>
+              </div>
+            </div>
+
+            <!-- Mission Card -->
+            <div class="about-g-split-card">
+              <div class="about-g-split-image-box">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Our Mission" class="about-g-split-img" referrerPolicy="no-referrer">
+                <div class="about-g-card-overlay"></div>
+                <div class="about-g-card-tag">MISSION</div>
+              </div>
+              <div class="about-g-split-content">
+                <h3 class="about-g-card-title">Our Mission</h3>
+                <p class="about-g-card-text">
+                  To deliver <strong>outstanding landscape solutions</strong> for our clients. Solutions that blend <strong>creativity</strong>, <strong>technical excellence</strong>, and <strong>sustainability</strong>. We are dedicated to <strong>enhancing the quality of life</strong> for our clients and communities by creating <strong>beautiful</strong>, <strong>functional</strong>, and <strong>eco-friendly outdoor spaces</strong>.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- FOUR CORE PILLARS SECTION -->
+      <section class="about-g-pillars">
+        <div class="about-g-container">
+          <div class="about-g-center-header">
+            <span class="about-g-section-tag">OUR VALUES</span>
+            <h2 class="about-g-headline">The Four Pillars Of Success</h2>
+            <div class="about-g-divider"></div>
+          </div>
+          
+          <div class="about-g-pillars-grid">
+            
+            <!-- Pillar 1 -->
+            <div class="about-g-pillar-card">
+              <div class="about-g-pillar-image-wrap">
+                <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80" alt="Innovative Design" class="about-g-pillar-img" referrerPolicy="no-referrer">
+              </div>
+              <div class="about-g-pillar-content">
+                <h3 class="about-g-pillar-title">Innovative Design</h3>
+                <p class="about-g-pillar-desc">
+                  Continuously push the boundaries of landscape design, creating unique and inspiring spaces that reflect the individuality of each client.
+                </p>
+              </div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="about-g-pillar-card">
+              <div class="about-g-pillar-image-wrap">
+                <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80" alt="Sustainability" class="about-g-pillar-img" referrerPolicy="no-referrer">
+              </div>
+              <div class="about-g-pillar-content">
+                <h3 class="about-g-pillar-title">Sustainability</h3>
+                <p class="about-g-pillar-desc">
+                  Integrate environmentally responsible practices into all our projects where applicable, promoting ecological balance and sustainability.
+                </p>
+              </div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="about-g-pillar-card">
+              <div class="about-g-pillar-image-wrap">
+                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80" alt="Client Satisfaction" class="about-g-pillar-img" referrerPolicy="no-referrer">
+              </div>
+              <div class="about-g-pillar-content">
+                <h3 class="about-g-pillar-title">Client Satisfaction</h3>
+                <p class="about-g-pillar-desc">
+                  Exceed client expectations by delivering high-quality, functional, and aesthetically pleasing landscapes through personalized service and collaboration.
+                </p>
+              </div>
+            </div>
+
+            <!-- Pillar 4 -->
+            <div class="about-g-pillar-card">
+              <div class="about-g-pillar-image-wrap">
+                <img src="https://images.unsplash.com/photo-1581094751116-499539fc3ada?auto=format&fit=crop&w=800&q=80" alt="Excellence in Documentation" class="about-g-pillar-img" referrerPolicy="no-referrer">
+              </div>
+              <div class="about-g-pillar-content">
+                <h3 class="about-g-pillar-title">Excellence in Documentation</h3>
+                <p class="about-g-pillar-desc">
+                  Provide precise and comprehensive technical documentation, ensuring seamless project execution and collaboration.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- LINK TO ARTICLES CALLOUT SECTION -->
+      <section class="cta-banner-section">
+        <div class="cta-inner-block">
+          <h3 class="cta-title">Explore our Projects Portfolio &gt;</h3>
+          <div class="cta-button-wrap">
+            <label for="route-articles" class="cta-action-button">Portfolio Page</label>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==============================================
+         TAB 4: CONTACT VIEW (Contact Info Grid + Send Message WPFORMS replica)
+         ============================================== -->
+    <div class="page-view" id="contact-view-pane">
+      <!-- MAIN PAGE HEADER BANNER -->
+      <section class="banner-header-section" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80');">
+        <div class="banner-header-overlay"></div>
+        <div class="banner-header-content">
+          <h1 class="banner-header-title">Contact</h1>
+        </div>
+      </section>
+
+      <!-- TWO COLUMN CONTACT BLOCK -->
+      <section class="contact-details-form-section">
+        <div class="contact-grid-container">
+          
+          <!-- LEFT SIDE: DIRECT CONTACT DETAILS -->
+          <div class="contact-info-column">
+            <h2 class="contact-section-heading">Contact Us</h2>
+            <p class="contact-section-subtext">You can reach us through our contact details below.</p>
+            
+            <ul class="contact-details-icon-list">
+              <!-- Email -->
+              <li class="contact-detail-row">
+                <span class="detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </span>
+                <span class="detail-text"><a href="mailto:info@designpluslandscape.com">info@designpluslandscape.com</a></span>
+              </li>
+              <!-- Phone -->
+              <li class="contact-detail-row">
+                <span class="detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </span>
+                <span class="detail-text"><a href="tel:+97141234567">+971 4 123 4567</a></span>
+              </li>
+              <!-- Office Hours -->
+              <li class="contact-detail-row align-start-detail">
+                <span class="detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </span>
+                <span class="detail-text">Office Hours: 9am - 5pm Mondays - Fridays Except Holidays</span>
+              </li>
+            </ul>
+
+            <!-- Optional Submissions History Log (Local & Webhook Testing Dashboard) -->
+            <div class="developer-logs-container" style="margin-top: 48px; border-top: 1px solid var(--line-color); padding-top: 24px;">
+              <h4 style="color: var(--accent-gold); font-size: 1rem; margin-bottom: 8px; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                  <polyline points="10 9 9 9 8 9"/>
+                </svg>
+                Submission Logs & Verification
+              </h4>
+              <p style="font-size: 0.85rem; color: var(--text-color-muted); line-height: 1.4; margin-bottom: 12px;">
+                Submissions automatically save to client storage here for easy verification. When a webhook Google Sheet is set up, it forwards them live as well.
+              </p>
+              
+              <div id="contact-local-logs" style="max-height: 200px; overflow-y: auto; background-color: rgba(0, 0, 0, 0.2); padding: 12px; border-radius: 6px; border: 1px solid var(--line-color); font-size: 0.8rem; font-family: var(--font-mono); color: #e2e8f0; display: flex; flex-direction: column; gap: 8px;">
+                <div style="color: var(--text-color-muted); text-align: center; padding: 12px 0;">No local submissions yet. Try sending a message!</div>
+              </div>
+              <button onclick="clearSubmissionLogs()" style="margin-top: 8px; font-size: 0.75rem; background: none; border: none; color: #ef4444; cursor: pointer; text-decoration: underline; opacity: 0.7;">
+                Clear log list
+              </button>
+            </div>
+          </div>
+
+          <!-- RIGHT SIDE: HIGH FIDELITY MASSAGING FORM -->
+          <div class="contact-form-column">
+            <h2 class="contact-section-heading">Send us a message.</h2>
+            <p class="contact-section-subtext">Please fill up the form and let us know how we can help you.</p>
+
+            <!-- Success notification trick: when form receives standard submit simulation -->
+            <form class="precision-wpforms-replica" action="#message-sent" method="POST" onsubmit="handleContactFormSubmit(event);">
+              
+              <!-- Success modal mock inside form state -->
+              <div class="submission-success-notification" id="success-modal">
+                <div class="success-alert-box">
+                  <div class="checkmark-animation">✓</div>
+                  <h4 class="success-alert-title">Message Sent Successfully!</h4>
+                  <p class="success-alert-body">Thank you for contacting Design Plus Landscape Consultancy. We will get back to you shortly.</p>
+                  <button type="button" class="close-success-alert-btn" onclick="this.parentElement.parentElement.style.display='none';">Close</button>
+                </div>
+              </div>
+
+              <!-- Form fields -->
+              <div class="form-rows-stack">
+                <!-- Row 1: Name -->
+                <div class="form-group-wrap">
+                  <label class="form-field-label">Your Name <span class="required-star">*</span></label>
+                  <input type="text" id="contact-name" name="name" placeholder="Your Name" required class="wpform-text-input">
+                </div>
+                <!-- Row 2: Email -->
+                <div class="form-group-wrap">
+                  <label class="form-field-label">Email <span class="required-star">*</span></label>
+                  <input type="email" id="contact-email" name="email" placeholder="Email" required class="wpform-text-input">
+                </div>
+                <!-- Row 3: Phone -->
+                <div class="form-group-wrap">
+                  <label class="form-field-label">Contact Number <span class="required-star">*</span></label>
+                  <input type="text" id="contact-phone" name="phone" placeholder="Contact Number" required class="wpform-text-input">
+                </div>
+                <!-- Row 4: Subject -->
+                <div class="form-group-wrap">
+                  <label class="form-field-label">Subject <span class="required-star">*</span></label>
+                  <input type="text" id="contact-subject" name="subject" placeholder="Subject" required class="wpform-text-input">
+                </div>
+                <!-- Row 5: Message -->
+                <div class="form-group-wrap">
+                  <label class="form-field-label">Your Message <span class="required-star">*</span></label>
+                  <textarea id="contact-message" name="message" placeholder="Your Message" required rows="5" class="wpform-text-area"></textarea>
+                </div>
+                <!-- Submit -->
+                <div class="form-group-wrap">
+                  <button type="submit" id="contact-submit-btn" class="wpform-submit-btn">SEND MESSAGE</button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- ==============================================
+         TAB 5: PORTFOLIO DETAIL VIEW
+         ============================================== -->
+    <div class="page-view" id="portfolio-detail-view-pane"></div>
+
+  </main>
+
+  <!-- 3. BUILDER'S WISDOM SECTION (Stays consistently visible as an inspiring global footer anchor) -->
+  <section class="builders-wisdom-quote-section">
+    <div class="quote-container">
+      <div class="quote-box">
+        <h5 class="quote-header-title">A BUILDER'S WISDOM QUOTE:</h5>
+        <p class="bible-verse-coordinates">Matthew 7:24-25, NIV</p>
+        <blockquote class="bible-verse-quote">
+          &ldquo;Therefore everyone who hears these words of mine and puts them into practice is like a wise man who built his house on the rock. The rain came down, the streams rose, and the winds blew and beat against that house; yet it did not fall, because it had its foundation on the rock.&rdquo;
+        </blockquote>
+        <p class="closing-glory">To GOD be the Glory!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BOTTOM LEGAL FOOTER (Global bottom anchor) -->
+  <footer class="app-baseline-footer" id="colophon">
+    <div class="footer-container">
+      <div class="copyright-meta-group">
+        <p class="footer-copy-text">Copyright &copy; 2026</p>
+        <p class="footer-copy-text bold-brand">DESIGN PLUS LANDSCAPE CONSULTANCY</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DYNAMIC PORTFOLIO DETAIL ROUTER & POPULATOR SCRIPT -->
+
+  <!-- IMMERSIVE PORTFOLIO GALLERY LIGHTBOX -->
+  <div class="lightbox-backdrop" id="portfolio-gallery-lightbox">
+    <button class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close Lightbox">&times;</button>
+    
+    <div class="lightbox-main-container">
+      <button class="lightbox-arrow lightbox-arrow-left" id="lightbox-prev-btn" aria-label="Previous Image">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </button>
+      
+      <img class="lightbox-display-img" id="lightbox-display-img" src="" alt="Main Preview" referrerPolicy="no-referrer">
+      
+      <button class="lightbox-arrow lightbox-arrow-right" id="lightbox-next-btn" aria-label="Next Image">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Image Caption/Counter description -->
+    <div class="lightbox-display-caption" id="lightbox-display-caption">Image loading...</div>
+
+    <!-- Scrollable Thumbnails Strip -->
+    <div class="lightbox-thumbs-container" id="lightbox-thumbs-container">
+      <!-- Generated Dynamically -->
+    </div>
+  </div>
+
+</body>
+</html>
