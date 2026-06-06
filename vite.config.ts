@@ -1,12 +1,27 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
+import fs from 'fs';
 import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
     base: './',
-    plugins: [react(), tailwindcss()],
+    plugins: [
+      react(),
+      tailwindcss(),
+      {
+        name: 'copy-portfolio-project-photos',
+        closeBundle() {
+          const sourceDir = path.resolve(__dirname, 'assets/portfolio/project-photos');
+          const targetDir = path.resolve(__dirname, 'dist/assets/portfolio/project-photos');
+
+          if (fs.existsSync(sourceDir)) {
+            fs.cpSync(sourceDir, targetDir, {recursive: true});
+          }
+        },
+      },
+    ],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
