@@ -299,29 +299,57 @@ h3, h4 {
   background-position: center;
   opacity: 0;
   transform: scale(1.01);
-  animation: slideTransition 24s linear infinite;
+  animation: slideTransition 32s linear infinite;
   backface-visibility: hidden;
   will-change: opacity, transform;
 }
 
 /* Slideshow URLs */
 .slide-1 {
-  background-image: url('https://images.unsplash.com/photo-1545244011-002026d24732?auto=format&fit=crop&w=1600&q=80');
+  background-image: url('./assets/portfolio/project-photos/Project%20Photos/Al%20Sufuoh%20Private%20Residences/alSufuoh_v2.jpg');
+  background-position: center center;
 }
 
 .slide-2 {
-  background-image: url('https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&w=1600&q=80');
-  animation-delay: 6s;
+  background-image: url('./assets/portfolio/project-photos/Project%20Photos/Al%20Marjan/Al%20Marjan%20Residential.png');
+  background-position: center center;
+  animation-delay: 4s;
 }
 
 .slide-3 {
-  background-image: url('https://images.unsplash.com/photo-1584467541268-b040f83be3fd?auto=format&fit=crop&w=1600&q=80');
-  animation-delay: 12s;
+  background-image: url('./assets/portfolio/project-photos/Project%20Photos/Jumeirah/09-10-25_23.33.26.jpg');
+  background-position: center center;
+  animation-delay: 8s;
 }
 
 .slide-4 {
-  background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80');
-  animation-delay: 18s;
+  background-image: url('./assets/portfolio/project-photos/Project%20Photos/Resort%20Living/10-10-25_07.31.31.jpg');
+  background-position: center center;
+  animation-delay: 12s;
+}
+
+.slide-5 {
+  background-image: url('./assets/portfolio/project-photos/Project%20Photos/Equestrian%20Club/equestrianclub_Front.png');
+  background-position: center center;
+  animation-delay: 16s;
+}
+
+.slide-6 {
+  background-image: url('./assets/portfolio/project-photos/Project%20Photos/Residential%20Podium/BASE.jpg');
+  background-position: center center;
+  animation-delay: 20s;
+}
+
+.slide-7 {
+  background-image: url('./assets/portfolio/project-photos/Project%20Photos/Stem%20Cell%20Centre/Isometric.png');
+  background-position: center center;
+  animation-delay: 24s;
+}
+
+.slide-8 {
+  background-image: url('./assets/portfolio/project-photos/Project%20Photos/Abu%20Dhabi%20Private%20Gardens/Abu%20Dhabi%20Private%20Gardens.jpg');
+  background-position: center center;
+  animation-delay: 28s;
 }
 
 /* Silky smooth linear Ken Burns sequence where scale reset is hidden while opacity is 0 */
@@ -330,13 +358,13 @@ h3, h4 {
     opacity: 0;
     transform: scale(1.01);
   }
-  4% {
+  3% {
     opacity: 1;
   }
-  25% {
+  12.5% {
     opacity: 1;
   }
-  29% {
+  15.5% {
     opacity: 0;
     transform: scale(1.07);
   }
@@ -692,6 +720,7 @@ h3, h4 {
   grid-template-columns: repeat(4, 1fr);
   gap: 32px; /* Multiple of 8 (4 * 8) */
   margin-bottom: 64px; /* Multiple of 8 (8 * 8) */
+  align-items: start;
 }
 
 .solution-card {
@@ -704,6 +733,7 @@ h3, h4 {
   transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.02), 0 2px 4px -1px rgba(15, 23, 42, 0.01);
   will-change: transform;
+  align-self: start;
 }
 
 .solution-card:hover {
@@ -1927,42 +1957,94 @@ h3, h4 {
 
 .explore-intro-feature-card {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--line-color);
-  border-radius: 8px;
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+  background:
+    radial-gradient(circle at top left, rgba(181, 159, 61, 0.14), transparent 34%),
+    linear-gradient(135deg, #f8fafc 0%, #ffffff 48%, #f2f6fb 100%);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 20px;
   overflow: hidden;
   margin-bottom: 32px;
-  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.02), 0 2px 4px -1px rgba(15, 23, 42, 0.01);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.08);
 }
 
 .explore-intro-content {
-  padding: 40px;
+  padding: 44px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 18px;
+}
+
+.explore-intro-kicker {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.06);
+  color: var(--accent-gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .explore-intro-title {
-  font-size: 1.75rem;
-  font-weight: 700;
+  font-size: clamp(2rem, 2.3vw, 2.65rem);
+  font-weight: 800;
   color: var(--text-primary);
-  letter-spacing: -0.025em;
-  margin-bottom: 16px;
+  letter-spacing: -0.04em;
+  margin-bottom: 0;
   text-transform: capitalize;
+  max-width: 10ch;
 }
 
 .explore-intro-text {
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.8;
   color: var(--text-secondary);
+  max-width: 58ch;
+}
+
+.explore-intro-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.explore-intro-metric {
+  padding: 16px 18px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+}
+
+.explore-intro-metric strong {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.explore-intro-metric span {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
 }
 
 .explore-intro-image-box {
   position: relative;
   overflow: hidden;
-  min-height: 280px;
-  background-color: var(--bg-darken);
+  min-height: 360px;
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.02), rgba(15, 23, 42, 0.08)),
+    linear-gradient(135deg, #dde7f2 0%, #f5f8fc 100%);
+  padding: 24px;
 }
 
 .explore-intro-img {
@@ -1973,7 +2055,58 @@ h3, h4 {
 }
 
 .explore-intro-feature-card:hover .explore-intro-img {
-  transform: scale(1.025);
+  transform: scale(1.04);
+}
+
+.explore-intro-visual-grid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 312px;
+}
+
+.explore-visual-card {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 22px 44px rgba(15, 23, 42, 0.16);
+  background: #dbe3ec;
+}
+
+.explore-visual-card figcaption {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.76);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.explore-visual-card-main {
+  inset: 22px 118px 22px 0;
+  z-index: 1;
+}
+
+.explore-visual-card-top {
+  top: 0;
+  right: 0;
+  width: 206px;
+  height: 140px;
+  z-index: 2;
+}
+
+.explore-visual-card-bottom {
+  right: 0;
+  bottom: 0;
+  width: 224px;
+  height: 172px;
+  z-index: 3;
 }
 
 .portfolio-sector-group {
@@ -2016,8 +2149,42 @@ h3, h4 {
   .explore-intro-feature-card {
     grid-template-columns: 1fr;
   }
+  .explore-intro-content {
+    padding: 32px 28px;
+  }
+  .explore-intro-metrics {
+    grid-template-columns: 1fr;
+  }
   .explore-intro-image-box {
-    min-height: 220px;
+    min-height: 340px;
+    padding: 18px;
+  }
+  .explore-visual-card-main {
+    inset: 0 92px 0 0;
+  }
+  .explore-visual-card-top {
+    width: 168px;
+    height: 118px;
+  }
+  .explore-visual-card-bottom {
+    width: 184px;
+    height: 138px;
+  }
+}
+
+@media (max-width: 640px) {
+  .explore-intro-title {
+    max-width: none;
+  }
+  .explore-intro-image-box {
+    min-height: 300px;
+  }
+  .explore-visual-card-main {
+    inset: 0;
+  }
+  .explore-visual-card-top,
+  .explore-visual-card-bottom {
+    display: none;
   }
 }
 
