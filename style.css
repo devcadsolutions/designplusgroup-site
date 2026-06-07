@@ -540,7 +540,6 @@ h3, h4 {
   color: var(--text-muted);
 }
 
-/* Grid of Specialties */
 .specialties-cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -611,11 +610,6 @@ h3, h4 {
   color: var(--text-secondary);
 }
 
-.card-description strong {
-  color: var(--text-primary);
-}
-
-/* Beautiful breakout highlight banner with rich landscape architecture backdrop */
 .specialties-inline-banner {
   position: relative;
   width: 100vw;
@@ -1109,9 +1103,11 @@ h3, h4 {
    8. Consultation Message Section
    ========================================== */
 .consultation-promo-section {
-  background-color: var(--bg-accent-dark);
+  background:
+    radial-gradient(circle at top center, rgba(181, 159, 61, 0.18), transparent 28%),
+    linear-gradient(90deg, #10182e 0%, #141f38 52%, #10182e 100%);
   color: var(--text-light);
-  padding: 96px 32px; /* Precision padding metrics (12 * 8, 4 * 8) */
+  padding: 104px 32px; /* Precision padding metrics (13 * 8, 4 * 8) */
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -1135,36 +1131,64 @@ h3, h4 {
 .promo-container {
   position: relative;
   z-index: 5;
-  max-width: 800px; /* Aligned (100 * 8) */
+  max-width: 860px; /* Aligned intentional wider CTA measure */
   margin: 0 auto;
+  padding: 44px 40px 48px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+    rgba(8, 14, 28, 0.46);
+  box-shadow: 0 26px 60px rgba(3, 8, 20, 0.28);
+  backdrop-filter: blur(6px);
+}
+
+.promo-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(181, 159, 61, 0.35);
+  border-radius: 999px;
+  background: rgba(181, 159, 61, 0.08);
+  color: #e0c96d;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 .promo-title {
   color: var(--text-light);
-  font-size: 2.25rem; /* Consistent section title sizing */
-  font-weight: 700;
-  margin-bottom: 16px; /* Aligned multiple (2 * 8) */
-  letter-spacing: -0.02em;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.08;
+  margin-bottom: 14px;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
 }
 
 .promo-description {
-  font-size: 1.0625rem;
-  line-height: 1.625;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 32px; /* Strict grid division gap (4 * 8) */
-  font-weight: 300;
+  max-width: 34rem;
+  margin: 0 auto 32px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 400;
 }
 
 .message-action-btn {
-  font-size: 0.8125rem; /* Consistent uppercase button design label */
+  font-size: 0.84rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   background-color: var(--accent-gold);
-  color: var(--text-light);
-  padding: 16px 32px; /* Consistent size factor multiples */
+  color: #fffdf3;
+  padding: 18px 36px;
   border-radius: 9999px; /* Standard pill format */
   display: inline-block;
+  box-shadow: 0 16px 30px rgba(181, 159, 61, 0.18);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
 }
@@ -3121,9 +3145,10 @@ h3, h4 {
   font-family: var(--font-serif);
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 400;
+  color: #ffffff;
   line-height: 1.15;
   margin-bottom: 16px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.65);
 }
 
 .detail-project-subtitle {
