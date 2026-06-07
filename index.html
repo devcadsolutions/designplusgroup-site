@@ -39,11 +39,11 @@
 
       <!-- CSS-Only Hamburger Toggle Hack -->
       <input type="checkbox" id="menu-toggle-input" class="menu-toggle-checkbox">
-      <label for="menu-toggle-input" class="menu-toggle-label" aria-label="Toggle navigation menu">
+      <button type="button" id="menu-toggle-button" class="menu-toggle-label" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-primary-nav">
         <span class="hamburger-bar"></span>
-      </label>
+      </button>
 
-      <nav class="navigation-menu-bar">
+      <nav class="navigation-menu-bar" id="mobile-primary-nav">
         <ul class="nav-links-list">
           <li><label for="route-home" class="nav-item home-nav">Home</label></li>
           <li><label for="route-articles" class="nav-item articles-nav">Portfolio</label></li>
@@ -2631,16 +2631,18 @@
       }
 
       const menuToggleInput = document.getElementById("menu-toggle-input");
+      const menuToggleButton = document.getElementById("menu-toggle-button");
       const mobileMenu = document.querySelector(".navigation-menu-bar");
       const menuToggleLabel = document.querySelector(".menu-toggle-label");
       const mobileNavList = document.querySelector(".nav-links-list");
       const mobileRouteTriggers = document.querySelectorAll('input[name="route-switch"]');
 
-      if (menuToggleInput && mobileMenu && menuToggleLabel && mobileNavList && masthead) {
+      if (menuToggleInput && menuToggleButton && mobileMenu && menuToggleLabel && mobileNavList && masthead) {
         const syncMobileMenuState = () => {
           const isMenuOpen = menuToggleInput.checked && window.innerWidth <= 767;
           document.body.classList.toggle("menu-open", isMenuOpen);
           masthead.classList.toggle("menu-open", isMenuOpen);
+          menuToggleButton.setAttribute("aria-expanded", isMenuOpen ? "true" : "false");
         };
 
         const closeMobileMenu = () => {
@@ -2655,9 +2657,8 @@
           window.setTimeout(closeMobileMenu, 120);
         };
 
-        menuToggleLabel.addEventListener("click", event => {
+        menuToggleButton.addEventListener("click", () => {
           if (window.innerWidth > 767) return;
-          event.preventDefault();
           menuToggleInput.checked = !menuToggleInput.checked;
           syncMobileMenuState();
         });
