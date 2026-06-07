@@ -2630,6 +2630,56 @@
         });
       }
 
+      const menuToggleInput = document.getElementById("menu-toggle-input");
+      const mobileMenu = document.querySelector(".navigation-menu-bar");
+      const menuToggleLabel = document.querySelector(".menu-toggle-label");
+      const mobileNavList = document.querySelector(".nav-links-list");
+
+      if (menuToggleInput && mobileMenu && menuToggleLabel && mobileNavList) {
+        const syncMobileMenuState = () => {
+          document.body.classList.toggle("menu-open", menuToggleInput.checked && window.innerWidth <= 767);
+        };
+
+        const closeMobileMenu = () => {
+          if (!menuToggleInput.checked) return;
+          menuToggleInput.checked = false;
+          syncMobileMenuState();
+        };
+
+        menuToggleInput.addEventListener("change", syncMobileMenuState);
+
+        mobileNavList.querySelectorAll("label, a, button").forEach(navAction => {
+          navAction.addEventListener("click", () => {
+            window.setTimeout(closeMobileMenu, 0);
+          });
+        });
+
+        document.addEventListener("click", event => {
+          if (!menuToggleInput.checked || window.innerWidth > 767) return;
+
+          const clickedToggle = menuToggleLabel.contains(event.target);
+          const clickedNavList = mobileNavList.contains(event.target);
+
+          if (!clickedToggle && !clickedNavList) {
+            closeMobileMenu();
+          }
+        });
+
+        document.addEventListener("keydown", event => {
+          if (event.key === "Escape") {
+            closeMobileMenu();
+          }
+        });
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 767) {
+            closeMobileMenu();
+          } else {
+            syncMobileMenuState();
+          }
+        });
+      }
+
       // Explicit fail-safe click navigation to Home for any part of the site header branding
       const brandingEl = document.querySelector(".site-branding");
       if (brandingEl) {
