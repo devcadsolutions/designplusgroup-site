@@ -2636,13 +2636,15 @@
       const mobileNavList = document.querySelector(".nav-links-list");
       const mobileRouteTriggers = document.querySelectorAll('input[name="route-switch"]');
 
-      if (menuToggleInput && mobileMenu && menuToggleLabel && mobileNavList) {
+      if (menuToggleInput && mobileMenu && menuToggleLabel && mobileNavList && masthead) {
         const syncMobileMenuState = () => {
-          document.body.classList.toggle("menu-open", menuToggleInput.checked && window.innerWidth <= 767);
+          const isMenuOpen = menuToggleInput.checked && window.innerWidth <= 767;
+          document.body.classList.toggle("menu-open", isMenuOpen);
+          masthead.classList.toggle("menu-open", isMenuOpen);
         };
 
         const closeMobileMenu = () => {
-          if (!menuToggleInput.checked) return;
+          if (!menuToggleInput.checked && !masthead.classList.contains("menu-open")) return;
           menuToggleInput.checked = false;
           syncMobileMenuState();
         };
@@ -2652,6 +2654,13 @@
           window.setTimeout(closeMobileMenu, 0);
           window.setTimeout(closeMobileMenu, 120);
         };
+
+        menuToggleLabel.addEventListener("click", event => {
+          if (window.innerWidth > 767) return;
+          event.preventDefault();
+          menuToggleInput.checked = !menuToggleInput.checked;
+          syncMobileMenuState();
+        });
 
         menuToggleInput.addEventListener("change", syncMobileMenuState);
 

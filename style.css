@@ -1615,29 +1615,34 @@ h3, h4 {
     font-size: 1.4rem;
   }
 
-  /* Hack checkbox states trigger transform logic */
-  .menu-toggle-checkbox:checked ~ .navigation-menu-bar {
+  /* Mobile menu can open either from checkbox state or explicit JS state */
+  .menu-toggle-checkbox:checked ~ .navigation-menu-bar,
+  .app-header.menu-open .navigation-menu-bar {
     transform: translateX(0);
     opacity: 1;
     visibility: visible;
     transition: transform var(--motion-duration-base) var(--motion-smooth), opacity var(--motion-duration-fast) ease;
   }
 
-  .menu-toggle-checkbox:checked ~ .navigation-menu-bar .nav-links-list {
+  .menu-toggle-checkbox:checked ~ .navigation-menu-bar .nav-links-list,
+  .app-header.menu-open .nav-links-list {
     opacity: 1;
     transform: translateY(0);
   }
 
-  .menu-toggle-checkbox:checked ~ .menu-toggle-label .hamburger-bar {
+  .menu-toggle-checkbox:checked ~ .menu-toggle-label .hamburger-bar,
+  .app-header.menu-open .menu-toggle-label .hamburger-bar {
     background-color: transparent;
   }
 
-  .menu-toggle-checkbox:checked ~ .menu-toggle-label .hamburger-bar::before {
+  .menu-toggle-checkbox:checked ~ .menu-toggle-label .hamburger-bar::before,
+  .app-header.menu-open .menu-toggle-label .hamburger-bar::before {
     transform: rotate(45deg);
     top: 0;
   }
 
-  .menu-toggle-checkbox:checked ~ .menu-toggle-label .hamburger-bar::after {
+  .menu-toggle-checkbox:checked ~ .menu-toggle-label .hamburger-bar::after,
+  .app-header.menu-open .menu-toggle-label .hamburger-bar::after {
     transform: rotate(-45deg);
     top: 0;
   }
