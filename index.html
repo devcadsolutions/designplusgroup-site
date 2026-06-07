@@ -2638,16 +2638,19 @@
       const mobileRouteTriggers = document.querySelectorAll('input[name="route-switch"]');
 
       if (menuToggleInput && menuToggleButton && mobileMenu && menuToggleLabel && mobileNavList && masthead) {
+        let isMobileMenuOpen = false;
+
         const syncMobileMenuState = () => {
-          const isMenuOpen = menuToggleInput.checked && window.innerWidth <= 767;
-          document.body.classList.toggle("menu-open", isMenuOpen);
-          masthead.classList.toggle("menu-open", isMenuOpen);
-          menuToggleButton.setAttribute("aria-expanded", isMenuOpen ? "true" : "false");
+          const shouldOpen = isMobileMenuOpen && window.innerWidth <= 767;
+          menuToggleInput.checked = shouldOpen;
+          document.body.classList.toggle("menu-open", shouldOpen);
+          masthead.classList.toggle("menu-open", shouldOpen);
+          menuToggleButton.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
         };
 
         const closeMobileMenu = () => {
-          if (!menuToggleInput.checked && !masthead.classList.contains("menu-open")) return;
-          menuToggleInput.checked = false;
+          if (!isMobileMenuOpen && !document.body.classList.contains("menu-open")) return;
+          isMobileMenuOpen = false;
           syncMobileMenuState();
         };
 
@@ -2659,11 +2662,9 @@
 
         menuToggleButton.addEventListener("click", () => {
           if (window.innerWidth > 767) return;
-          menuToggleInput.checked = !menuToggleInput.checked;
+          isMobileMenuOpen = !isMobileMenuOpen;
           syncMobileMenuState();
         });
-
-        menuToggleInput.addEventListener("change", syncMobileMenuState);
 
         mobileNavList.querySelectorAll("label, a, button").forEach(navAction => {
           ["pointerup", "touchend", "click"].forEach(eventName => {
@@ -2681,7 +2682,7 @@
 
         ["pointerdown", "touchstart", "click"].forEach(eventName => {
           document.addEventListener(eventName, event => {
-            if (!menuToggleInput.checked || window.innerWidth > 767) return;
+            if (!isMobileMenuOpen || window.innerWidth > 767) return;
             if (isRouteNavigationTrigger(event.target)) {
               closeMobileMenuSoon();
             }
@@ -2689,7 +2690,7 @@
         });
 
         document.addEventListener("click", event => {
-          if (!menuToggleInput.checked || window.innerWidth > 767) return;
+          if (!isMobileMenuOpen || window.innerWidth > 767) return;
 
           const clickedToggle = menuToggleLabel.contains(event.target);
           const clickedNavList = mobileNavList.contains(event.target);
@@ -2712,6 +2713,8 @@
             syncMobileMenuState();
           }
         });
+
+        syncMobileMenuState();
       }
 
       // Explicit fail-safe click navigation to Home for any part of the site header branding
