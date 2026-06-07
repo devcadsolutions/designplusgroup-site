@@ -2515,6 +2515,16 @@
         
         const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         const phonePattern = /^[+\d\s().-]{7,25}$/; // standard digit formatting
+        const updateCheckItem = (checkItem, isValid) => {
+          if (!checkItem) return;
+
+          checkItem.classList.toggle("satisfied", isValid);
+
+          const bullet = checkItem.querySelector(".check-bullet");
+          if (bullet) {
+            bullet.textContent = isValid ? "✓" : "○";
+          }
+        };
         
         const validateFormFields = () => {
           let score = 0;
@@ -2523,45 +2533,29 @@
           const isNameValid = nameField.value.trim().length > 1;
           if (isNameValid) {
             score += 25;
-            checkItems.name.classList.add("satisfied");
-            checkItems.name.querySelector(".check-bullet").textContent = "✓";
-          } else {
-            checkItems.name.classList.remove("satisfied");
-            checkItems.name.querySelector(".check-bullet").textContent = "○";
           }
+          updateCheckItem(checkItems.name, isNameValid);
           
           // 2. Email Check
           const isEmailValid = emailPattern.test(emailField.value.trim());
           if (isEmailValid) {
             score += 25;
-            checkItems.email.classList.add("satisfied");
-            checkItems.email.querySelector(".check-bullet").textContent = "✓";
-          } else {
-            checkItems.email.classList.remove("satisfied");
-            checkItems.email.querySelector(".check-bullet").textContent = "○";
           }
+          updateCheckItem(checkItems.email, isEmailValid);
           
           // 3. Phone Check
           const isPhoneValid = phonePattern.test(phoneField.value.trim());
           if (isPhoneValid) {
             score += 25;
-            checkItems.phone.classList.add("satisfied");
-            checkItems.phone.querySelector(".check-bullet").textContent = "✓";
-          } else {
-            checkItems.phone.classList.remove("satisfied");
-            checkItems.phone.querySelector(".check-bullet").textContent = "○";
           }
+          updateCheckItem(checkItems.phone, isPhoneValid);
           
           // 4. Message Check
           const isMsgValid = messageField.value.trim().length >= 15;
           if (isMsgValid) {
             score += 25;
-            checkItems.message.classList.add("satisfied");
-            checkItems.message.querySelector(".check-bullet").textContent = "✓";
-          } else {
-            checkItems.message.classList.remove("satisfied");
-            checkItems.message.querySelector(".check-bullet").textContent = "○";
           }
+          updateCheckItem(checkItems.message, isMsgValid);
           
           // Progress bar updating
           if (progressBarF) {
@@ -2636,12 +2630,14 @@
       const mobileNavList = document.querySelector(".nav-links-list");
       const mobileRouteTriggers = document.querySelectorAll('input[name="route-switch"]');
 
-      if (menuToggleInput && menuToggleButton && mobileMenu && mobileNavList && masthead) {
+      if (menuToggleButton && mobileMenu && mobileNavList && masthead) {
         let isMobileMenuOpen = false;
         const isMobileMenuMode = () => window.getComputedStyle(menuToggleButton).display !== "none";
 
         const syncMenuUi = () => {
-          menuToggleInput.checked = isMobileMenuOpen;
+          if (menuToggleInput) {
+            menuToggleInput.checked = isMobileMenuOpen;
+          }
           document.body.classList.toggle("menu-open", isMobileMenuOpen);
           masthead.classList.toggle("menu-open", isMobileMenuOpen);
           mobileMenu.classList.toggle("is-open", isMobileMenuOpen);
