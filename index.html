@@ -2633,88 +2633,80 @@
       const menuToggleInput = document.getElementById("menu-toggle-input");
       const menuToggleButton = document.getElementById("menu-toggle-button");
       const mobileMenu = document.querySelector(".navigation-menu-bar");
-      const menuToggleLabel = document.querySelector(".menu-toggle-label");
       const mobileNavList = document.querySelector(".nav-links-list");
       const mobileRouteTriggers = document.querySelectorAll('input[name="route-switch"]');
 
-      if (menuToggleInput && menuToggleButton && mobileMenu && menuToggleLabel && mobileNavList && masthead) {
+      if (menuToggleInput && menuToggleButton && mobileMenu && mobileNavList && masthead) {
         let isMobileMenuOpen = false;
 
-        const syncMobileMenuState = () => {
-          const shouldOpen = isMobileMenuOpen && window.innerWidth <= 767;
-          menuToggleInput.checked = shouldOpen;
-          document.body.classList.toggle("menu-open", shouldOpen);
-          masthead.classList.toggle("menu-open", shouldOpen);
-          menuToggleButton.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+        const syncMenuUi = () => {
+          menuToggleInput.checked = isMobileMenuOpen;
+          document.body.classList.toggle("menu-open", isMobileMenuOpen);
+          masthead.classList.toggle("menu-open", isMobileMenuOpen);
+          mobileMenu.classList.toggle("is-open", isMobileMenuOpen);
+          menuToggleButton.classList.toggle("is-active", isMobileMenuOpen);
+          menuToggleButton.setAttribute("aria-expanded", isMobileMenuOpen ? "true" : "false");
         };
 
-        const closeMobileMenu = () => {
-          if (!isMobileMenuOpen && !document.body.classList.contains("menu-open")) return;
+        function openMenu() {
+          if (window.innerWidth > 767 || isMobileMenuOpen) return;
+          isMobileMenuOpen = true;
+          syncMenuUi();
+        }
+
+        function closeMenu() {
+          if (!isMobileMenuOpen) return;
           isMobileMenuOpen = false;
-          syncMobileMenuState();
-        };
+          syncMenuUi();
+        }
 
-        const closeMobileMenuSoon = () => {
-          closeMobileMenu();
-          window.setTimeout(closeMobileMenu, 0);
-          window.setTimeout(closeMobileMenu, 120);
-        };
-
-        menuToggleButton.addEventListener("click", () => {
+        function toggleMenu() {
           if (window.innerWidth > 767) return;
-          isMobileMenuOpen = !isMobileMenuOpen;
-          syncMobileMenuState();
-        });
+          if (isMobileMenuOpen) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        }
 
-        mobileNavList.querySelectorAll("label, a, button").forEach(navAction => {
-          ["pointerup", "touchend", "click"].forEach(eventName => {
-            navAction.addEventListener(eventName, closeMobileMenuSoon, { passive: true });
+        menuToggleButton.addEventListener("click", toggleMenu);
+
+        mobileNavList.querySelectorAll('label[for^="route-"], a, button').forEach(navAction => {
+          navAction.addEventListener("click", () => {
+            closeMenu();
           });
         });
 
         mobileRouteTriggers.forEach(routeTrigger => {
-          routeTrigger.addEventListener("change", closeMobileMenuSoon);
-        });
-
-        const isRouteNavigationTrigger = target => {
-          return !!target.closest('label[for^="route-"], .logo-link, .cta-action-button, .message-action-btn, .footer-nav-link');
-        };
-
-        ["pointerdown", "touchstart", "click"].forEach(eventName => {
-          document.addEventListener(eventName, event => {
-            if (!isMobileMenuOpen || window.innerWidth > 767) return;
-            if (isRouteNavigationTrigger(event.target)) {
-              closeMobileMenuSoon();
-            }
-          }, true);
+          routeTrigger.addEventListener("change", () => {
+            closeMenu();
+          });
         });
 
         document.addEventListener("click", event => {
           if (!isMobileMenuOpen || window.innerWidth > 767) return;
 
-          const clickedToggle = menuToggleLabel.contains(event.target);
-          const clickedNavList = mobileNavList.contains(event.target);
+          const clickedToggle = menuToggleButton.contains(event.target);
+          const clickedMenu = mobileMenu.contains(event.target);
 
-          if (!clickedToggle && !clickedNavList) {
-            closeMobileMenu();
+          if (!clickedToggle && !clickedMenu) {
+            closeMenu();
           }
         });
 
         document.addEventListener("keydown", event => {
           if (event.key === "Escape") {
-            closeMobileMenu();
+            closeMenu();
           }
         });
 
         window.addEventListener("resize", () => {
           if (window.innerWidth > 767) {
-            closeMobileMenu();
-          } else {
-            syncMobileMenuState();
+            closeMenu();
           }
         });
 
-        syncMobileMenuState();
+        closeMenu();
       }
 
       // Explicit fail-safe click navigation to Home for any part of the site header branding

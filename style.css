@@ -1542,6 +1542,10 @@ h3, h4 {
 
 /* Small Viewports Mobile Drawer Navigation (CSS Hack) */
 @media screen and (max-width: 767px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+
   .header-inner-container {
     padding: 10px 20px;
   }
