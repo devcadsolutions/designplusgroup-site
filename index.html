@@ -2634,6 +2634,7 @@
       const mobileMenu = document.querySelector(".navigation-menu-bar");
       const menuToggleLabel = document.querySelector(".menu-toggle-label");
       const mobileNavList = document.querySelector(".nav-links-list");
+      const mobileRouteTriggers = document.querySelectorAll('input[name="route-switch"]');
 
       if (menuToggleInput && mobileMenu && menuToggleLabel && mobileNavList) {
         const syncMobileMenuState = () => {
@@ -2646,12 +2647,35 @@
           syncMobileMenuState();
         };
 
+        const closeMobileMenuSoon = () => {
+          closeMobileMenu();
+          window.setTimeout(closeMobileMenu, 0);
+          window.setTimeout(closeMobileMenu, 120);
+        };
+
         menuToggleInput.addEventListener("change", syncMobileMenuState);
 
         mobileNavList.querySelectorAll("label, a, button").forEach(navAction => {
-          navAction.addEventListener("click", () => {
-            window.setTimeout(closeMobileMenu, 0);
+          ["pointerup", "touchend", "click"].forEach(eventName => {
+            navAction.addEventListener(eventName, closeMobileMenuSoon, { passive: true });
           });
+        });
+
+        mobileRouteTriggers.forEach(routeTrigger => {
+          routeTrigger.addEventListener("change", closeMobileMenuSoon);
+        });
+
+        const isRouteNavigationTrigger = target => {
+          return !!target.closest('label[for^="route-"], .logo-link, .cta-action-button, .message-action-btn, .footer-nav-link');
+        };
+
+        ["pointerdown", "touchstart", "click"].forEach(eventName => {
+          document.addEventListener(eventName, event => {
+            if (!menuToggleInput.checked || window.innerWidth > 767) return;
+            if (isRouteNavigationTrigger(event.target)) {
+              closeMobileMenuSoon();
+            }
+          }, true);
         });
 
         document.addEventListener("click", event => {
