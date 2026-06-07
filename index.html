@@ -43,7 +43,7 @@
         <span class="hamburger-bar"></span>
       </button>
 
-      <nav class="navigation-menu-bar" id="mobile-primary-nav">
+      <nav class="navigation-menu-bar" id="mobile-primary-nav" hidden>
         <ul class="nav-links-list">
           <li><label for="route-home" class="nav-item home-nav">Home</label></li>
           <li><label for="route-articles" class="nav-item articles-nav">Portfolio</label></li>
@@ -2638,6 +2638,7 @@
 
       if (menuToggleInput && menuToggleButton && mobileMenu && mobileNavList && masthead) {
         let isMobileMenuOpen = false;
+        const isMobileMenuMode = () => window.getComputedStyle(menuToggleButton).display !== "none";
 
         const syncMenuUi = () => {
           menuToggleInput.checked = isMobileMenuOpen;
@@ -2646,10 +2647,20 @@
           mobileMenu.classList.toggle("is-open", isMobileMenuOpen);
           menuToggleButton.classList.toggle("is-active", isMobileMenuOpen);
           menuToggleButton.setAttribute("aria-expanded", isMobileMenuOpen ? "true" : "false");
+          mobileMenu.setAttribute("aria-hidden", isMobileMenuOpen ? "false" : "true");
+          mobileMenu.hidden = !isMobileMenuOpen;
+          mobileMenu.style.display = isMobileMenuOpen ? "flex" : "none";
+          mobileMenu.style.visibility = isMobileMenuOpen ? "visible" : "hidden";
+          mobileMenu.style.opacity = isMobileMenuOpen ? "1" : "0";
+          mobileMenu.style.pointerEvents = isMobileMenuOpen ? "auto" : "none";
+          mobileMenu.style.transform = isMobileMenuOpen ? "translateX(0)" : "translateX(100%)";
+          mobileNavList.style.display = "flex";
+          mobileNavList.style.opacity = isMobileMenuOpen ? "1" : "0";
+          mobileNavList.style.transform = isMobileMenuOpen ? "translateY(0)" : "translateY(16px)";
         };
 
         function openMenu() {
-          if (window.innerWidth > 767 || isMobileMenuOpen) return;
+          if (!isMobileMenuMode() || isMobileMenuOpen) return;
           isMobileMenuOpen = true;
           syncMenuUi();
         }
@@ -2661,7 +2672,7 @@
         }
 
         function toggleMenu() {
-          if (window.innerWidth > 767) return;
+          if (!isMobileMenuMode()) return;
           if (isMobileMenuOpen) {
             closeMenu();
           } else {
@@ -2669,9 +2680,30 @@
           }
         }
 
-        menuToggleButton.addEventListener("click", toggleMenu);
+        menuToggleButton.addEventListener("click", event => {
+          event.preventDefault();
+          event.stopPropagation();
+          toggleMenu();
+        });
 
-        mobileNavList.querySelectorAll('label[for^="route-"], a, button').forEach(navAction => {
+        mobileNavList.querySelectorAll('label[for^="route-"]').forEach(navAction => {
+          navAction.addEventListener("click", event => {
+            const targetId = navAction.getAttribute("for");
+            const targetRoute = targetId ? document.getElementById(targetId) : null;
+
+            if (targetRoute) {
+              event.preventDefault();
+              targetRoute.checked = true;
+            }
+
+            closeMenu();
+            window.setTimeout(() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }, 40);
+          });
+        });
+
+        mobileNavList.querySelectorAll('a, button:not(#menu-toggle-button)').forEach(navAction => {
           navAction.addEventListener("click", () => {
             closeMenu();
           });
@@ -2684,7 +2716,7 @@
         });
 
         document.addEventListener("click", event => {
-          if (!isMobileMenuOpen || window.innerWidth > 767) return;
+          if (!isMobileMenuOpen || !isMobileMenuMode()) return;
 
           const clickedToggle = menuToggleButton.contains(event.target);
           const clickedMenu = mobileMenu.contains(event.target);
@@ -2701,7 +2733,7 @@
         });
 
         window.addEventListener("resize", () => {
-          if (window.innerWidth > 767) {
+          if (!isMobileMenuMode()) {
             closeMenu();
           }
         });
