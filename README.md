@@ -1,57 +1,85 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Design Plus Group Website
 
-# Run and deploy your AI Studio app
+A modern, responsive corporate website created for **Design Plus Group**, a landscape consultancy and design practice. The website presents the company’s services, project approach, and professional expertise through a clean, visual, and client-focused interface.
 
-This contains everything you need to run your app locally.
+## Live Website
 
-View your app in AI Studio: https://ai.studio/apps/f7ee046a-b26c-4e61-8ecb-6d9420c8e3c8
+[View the live website](https://devcadsolutions.github.io/designplusgroup-site/)
 
-## Run Locally
+## Overview
 
-**Prerequisites:**  Node.js
+The website was designed to establish a professional online presence for Design Plus Group and make its services easy to understand for potential clients. It uses a refined layout, concise content, and carefully selected imagery to communicate the company’s focus on landscape design, technical documentation, consultancy, and project execution.
 
+## Key Features
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- Responsive layout for desktop, tablet, and mobile devices
+- Clean and professional landing page design
+- Clear presentation of the company’s services
+- Visual sections that support the brand’s landscape and design identity
+- Mobile-friendly navigation menu
+- Contact-focused calls to action
+- Lightweight static deployment through GitHub Pages
 
-## Contact Form: Google Sheets + Email
+## Main Service Sections
 
-The contact form can use one Google Apps Script Web App to do both:
+The website highlights the company’s core services:
 
-- append inquiries to a Google Sheet
-- send an email notification for each submission
+- **Landscape Design** — Creative and functional landscape concepts tailored to project requirements
+- **Project Execution** — A structured, client-focused process from planning to implementation
+- **Technical Documentation** — Detailed plans, specifications, and reports for smoother project coordination
+- **Consultancy Services** — Professional guidance for landscape planning, sustainability, and project feasibility
 
-### Files
+## Technologies Used
 
-- Frontend webhook submit: [index.html](./index.html)
-- Apps Script template: [google-apps-script/contact-webhook.gs](./google-apps-script/contact-webhook.gs)
-- Env var example: [.env.example](./.env.example)
+- HTML5
+- CSS3
+- JavaScript
+- GitHub Pages
 
-### Setup
+## Project Structure
 
-1. Create a Google Sheet for inquiries.
-2. Open `Extensions > Apps Script` from that sheet, or create a standalone Apps Script project.
-3. Paste in the contents of `google-apps-script/contact-webhook.gs`.
-4. Update these constants in the script:
-   - `SPREADSHEET_ID`
-   - `SHEET_NAME`
-   - `NOTIFICATION_EMAIL`
-5. Deploy the script as a Web App:
-   - `Execute as:` `Me`
-   - `Who has access:` `Anyone`
-6. Copy the Web App URL.
-7. In `.env.local`, set:
+```text
+designplusgroup-site/
+├── index.html
+├── assets/
+│   ├── css/
+│   ├── js/
+│   └── images/
+└── README.md
+```
 
-   `VITE_GOOGLE_SHEETS_WEBHOOK="YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL"`
+> The actual folder structure may vary depending on the final project organization.
 
-8. Restart the dev server or rebuild the site.
+## Screenshots
 
-### Notes
+Add website screenshots to the repository and update the image paths below.
 
-- If `VITE_GOOGLE_SHEETS_WEBHOOK` is empty, the form only simulates success locally.
-- The form now submits as URL-encoded data, which is simpler and more reliable for Apps Script webhooks.
+```md
+![Design Plus Group Website Preview](assets/images/website-preview.png)
+```
+
+## Running the Project Locally
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/devcadsolutions/designplusgroup-site.git
+   ```
+
+2. Open the project folder.
+
+3. Launch `index.html` in a browser, or use a local development server such as the **Live Server** extension in Visual Studio Code.
+
+## Deployment
+
+The website is deployed using **GitHub Pages**.
+
+For future updates, push the latest changes to the repository branch configured for GitHub Pages deployment.
+
+## Developer
+
+Website designed and developed by **[DevCAD Solutions](https://devcad.site/)**.
+
+## License
+
+This project was created for Design Plus Group. The website content, branding, and visual assets are intended for the client’s use. Reuse or redistribution may require permission from the respective owner.
