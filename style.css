@@ -4094,6 +4094,7 @@ html {
 .luxury-form-textarea {
   min-height: 120px;
   resize: vertical;
+  padding-top: 22px;
 }
 
 .luxury-form-textarea:focus ~ .luxury-floating-label,
