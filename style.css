@@ -167,7 +167,7 @@ h3, h4 {
   padding: 10px 32px; /* Subtle header height shrink response on scroll */
 }
 
-/* Site Branding & Custom Bevel logo alignment */
+/* Site Branding & supplied DPG logo alignment */
 .site-branding {
   display: flex;
   align-items: center;
@@ -176,8 +176,10 @@ h3, h4 {
 }
 
 .site-logo {
-  width: 60px; /* Aligned to grid factor */
-  height: auto;
+  width: 60px;
+  height: 52px;
+  object-fit: contain;
+  object-position: center;
   transition: transform var(--motion-duration-base) var(--motion-smooth);
   pointer-events: none; /* Allows click events to bubble up transparently */
 }
@@ -1311,7 +1313,9 @@ h3, h4 {
 
 .footer-site-logo {
   width: 60px;
-  height: auto;
+  height: 52px;
+  object-fit: contain;
+  object-position: center;
 }
 
 .footer-brand-title {
